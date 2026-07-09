@@ -811,3 +811,27 @@ nav a {
   font-weight: 700;
   text-transform: uppercase;
 }
+
+
+/* ==========================================================
+   Mermaid Decision Tree
+   Flowchart rendering for the Interactive Decision Tree page.
+   ========================================================== */
+
+.mermaid-wrap {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.mermaid-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid {
+  min-width: 720px;
+}
