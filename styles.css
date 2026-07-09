@@ -813,16 +813,17 @@ nav a {
 }
 
 
+
 /* ==========================================================
-   Mermaid Decision Tree Styling
-   Keeps Mermaid flowcharts visually aligned with the site.
+   Mermaid Decision Tree
+   Flowchart rendering for the Interactive Decision Tree page.
    ========================================================== */
 
 .mermaid-wrap {
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 18px;
-  padding: 1.25rem;
+  padding: 1rem;
   overflow-x: auto;
   margin: 1rem 0;
 }
@@ -831,32 +832,4 @@ nav a {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
-}
-
-.mermaid .node rect,
-.mermaid .node polygon,
-.mermaid .node circle,
-.mermaid .node ellipse {
-  stroke-width: 2px !important;
-}
-
-.mermaid .edgeLabel {
-  background-color: var(--white) !important;
-  color: var(--text) !important;
-  font-weight: 700 !important;
-}
-
-.mermaid .edgeLabel p {
-  background-color: var(--white) !important;
-}
-
-.mermaid .label {
-  color: var(--text) !important;
-  font-family: Arial, Helvetica, sans-serif !important;
-}
-
-.mermaid .flowchart-link {
-  stroke: var(--muted) !important;
-  stroke-width: 2px !important;
 }
