@@ -8,52 +8,28 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  
-  <!-- Mermaid renders the decision trees below. -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    mermaid.initialize({
-      startOnLoad: true,
-      securityLevel: "loose",
-      theme: "base",
-      flowchart: {
-        curve: "basis",
-        htmlLabels: true,
-        nodeSpacing: 55,
-        rankSpacing: 70,
-        padding: 16
-      },
-      themeVariables: {
-        fontFamily: "Arial, Helvetica, sans-serif",
-        fontSize: "16px",
-
-        primaryColor: "#FFFFFF",
-        primaryTextColor: "#1F2933",
-        primaryBorderColor: "#1D4E89",
-
-        secondaryColor: "#F7FAFC",
-        secondaryTextColor: "#1F2933",
-        secondaryBorderColor: "#2A9D8F",
-
-        tertiaryColor: "#FFFFFF",
-        tertiaryTextColor: "#1F2933",
-        tertiaryBorderColor: "#D9E2EC",
-
-        lineColor: "#52616B",
-
-        noteBkgColor: "#F7FAFC",
-        noteTextColor: "#1F2933",
-
-        edgeLabelBackground: "#FFFFFF",
-
-        clusterBkg: "#FFFFFF",
-        clusterBorder: "#D9E2EC"
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        securityLevel: "loose",
+        flowchart: {
+          curve: "linear",
+          htmlLabels: true
+        },
+        themeVariables: {
+          fontFamily: "Arial, Helvetica, sans-serif",
+          primaryColor: "#FFFFFF",
+          primaryTextColor: "#1F2933",
+          primaryBorderColor: "#1D4E89",
+          lineColor: "#52616B"
+        }
+      });
     });
-  });
-
+  </script>
 </head>
 
 <body>
@@ -142,14 +118,14 @@ flowchart TD
           <div class="mermaid-wrap" aria-label="Flowchart for deciding whether content is safe to upload">
 <pre class="mermaid">
 flowchart TD
-    A([Start: I want to upload something]) --> B{Does it include learner names, grades, IDs, messages, accommodations, or submissions?}
-    B -->|Yes| C[Stop: Do not upload it to a public AI tool]
-    B -->|No| D{Does it include private institutional information?}
-    D -->|Yes| E[Stop: Use an approved institutional process]
-    D -->|No| F{Does it include copyrighted or licensed material?}
-    F -->|Yes| G[Check the license or use a safer excerpt]
-    F -->|No| H[You may continue with human review]
-    G --> I[Next: Use the Decision Card called Can I upload this?]
+    A(["Start: I want to upload something"]) --> B{"Does it include learner names, grades, IDs, messages, accommodations, or submissions?"}
+    B -->|Yes| C["Stop: Do not upload it to a public AI tool"]
+    B -->|No| D{"Does it include private institutional information?"}
+    D -->|Yes| E["Stop: Use an approved institutional process"]
+    D -->|No| F{"Does it include copyrighted or licensed material?"}
+    F -->|Yes| G["Check the license or use a safer excerpt"]
+    F -->|No| H["You may continue with human review"]
+    G --> I["Next: Use the Decision Card Can I upload this?"]
     H --> I
 </pre>
           </div>
@@ -172,16 +148,16 @@ flowchart TD
           <div class="mermaid-wrap" aria-label="Flowchart for reviewing whether course materials are ready for learners">
 <pre class="mermaid">
 flowchart TD
-    A([Start: I want to improve course materials]) --> B{Can learners tell what to do first?}
-    B -->|No| C[Revise the structure and directions]
-    B -->|Yes| D{Are links, files, images, tables, and media accessible?}
-    D -->|No| E[Fix access barriers before sharing]
-    D -->|Yes| F{Does this support the learning goal?}
-    F -->|No| G[Revise or remove it]
-    F -->|Yes| H{Does it reduce confusion or create more of it?}
-    H -->|Creates confusion| I[Revise for clarity]
-    H -->|Reduces confusion| J[Ready for final human review]
-    J --> K[Next: Use the Decision Card called Is this ready for learners?]
+    A(["Start: I want to improve course materials"]) --> B{"Can learners tell what to do first?"}
+    B -->|No| C["Revise the structure and directions"]
+    B -->|Yes| D{"Are links, files, images, tables, and media accessible?"}
+    D -->|No| E["Fix access barriers before sharing"]
+    D -->|Yes| F{"Does this support the learning goal?"}
+    F -->|No| G["Revise or remove it"]
+    F -->|Yes| H{"Does it reduce confusion or create more of it?"}
+    H -->|Creates confusion| I["Revise for clarity"]
+    H -->|Reduces confusion| J["Ready for final human review"]
+    J --> K["Next: Use the Decision Card Is this ready for learners?"]
 </pre>
           </div>
 
@@ -203,15 +179,15 @@ flowchart TD
           <div class="mermaid-wrap" aria-label="Flowchart for deciding whether learners should use AI">
 <pre class="mermaid">
 flowchart TD
-    A([Start: I want learners to use AI]) --> B{What skill are learners supposed to practice?}
-    B --> C{Would AI complete that skill for them?}
-    C -->|Yes| D[Restrict AI or redesign the task]
-    C -->|No| E{Does AI support brainstorming, revision, practice, or reflection?}
-    E -->|Yes| F{Are expectations clear?}
-    E -->|No| G[Do not include AI unless it supports the learning goal]
-    F -->|No| H[Explain what is allowed, what must be disclosed, and what learners must do themselves]
-    F -->|Yes| I[AI use may be appropriate]
-    H --> J[Next: Use the Decision Card called Should learners use AI for this?]
+    A(["Start: I want learners to use AI"]) --> B{"What skill are learners supposed to practice?"}
+    B --> C{"Would AI complete that skill for them?"}
+    C -->|Yes| D["Restrict AI or redesign the task"]
+    C -->|No| E{"Does AI support brainstorming, revision, practice, or reflection?"}
+    E -->|Yes| F{"Are expectations clear?"}
+    E -->|No| G["Do not include AI unless it supports the learning goal"]
+    F -->|No| H["Explain what is allowed, what must be disclosed, and what learners must do themselves"]
+    F -->|Yes| I["AI use may be appropriate"]
+    H --> J["Next: Use the Decision Card Should learners use AI for this?"]
     I --> J
 </pre>
           </div>
