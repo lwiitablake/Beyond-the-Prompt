@@ -7,6 +7,26 @@
   <title>Interactive Decision Tree | Beyond the Prompt</title>
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Mermaid renders the decision trees below. -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: "loose",
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Arial, Helvetica, sans-serif",
+        primaryColor: "#FFFFFF",
+        primaryTextColor: "#1F2933",
+        primaryBorderColor: "#1D4E89",
+        lineColor: "#52616B",
+        secondaryColor: "#F7FAFC",
+        tertiaryColor: "#FFFFFF"
+      }
+    });
+  </script>
 </head>
 
 <body>
@@ -17,13 +37,13 @@
     <p class="site-name">Beyond the Prompt</p>
 
     <nav aria-label="Main navigation">
-  <a href="index.html">Start Here</a>
-  <a href="learn.html">Learn</a>
-  <a href="decide.html">Decide</a>
-  <a href="apply.html">Apply</a>
-  <a href="cards.html">Cards</a>
-  <a href="downloads.html">Downloads</a>
-</nav>
+      <a href="index.html">Start Here</a>
+      <a href="learn.html">Learn</a>
+      <a href="decide.html">Decide</a>
+      <a href="apply.html">Apply</a>
+      <a href="cards.html">Cards</a>
+      <a href="downloads.html">Downloads</a>
+    </nav>
   </div>
 </header>
 
@@ -45,8 +65,8 @@
   </section>
 
   <section class="page-section">
-    <h2>What are you trying to do?</h2>
-    <p>Open one branch. Keep the rest closed unless you need them.</p>
+    <h2>Choose your starting point</h2>
+    <p>Open the branch closest to what you are trying to do. Keep the rest closed unless you need them.</p>
 
     <div class="accordion-controls" aria-label="Decision tree display controls">
       <button type="button" class="utility-button" id="expand-all">Expand all branches</button>
@@ -63,90 +83,23 @@
         </summary>
 
         <div class="step-content">
-  <h3>Flowchart prototype</h3>
-
-  <div class="flowchart-svg-wrap" role="img" aria-labelledby="ai-use-flow-title ai-use-flow-desc">
-    <svg class="flowchart-svg" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg">
-      <title id="ai-use-flow-title">Should AI be used here?</title>
-      <desc id="ai-use-flow-desc">
-        A decision flowchart for deciding whether AI should be used for a course task.
-      </desc>
-
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L9,3 z" fill="#52616B"></path>
-        </marker>
-      </defs>
-
-      <!-- START -->
-      <rect x="315" y="20" width="270" height="70" rx="14" class="flow-node flow-start"></rect>
-      <text x="450" y="50" text-anchor="middle" class="flow-text flow-title">Start</text>
-      <text x="450" y="73" text-anchor="middle" class="flow-text">I want to use AI</text>
-
-      <line x1="450" y1="90" x2="450" y2="135" class="flow-line"></line>
-
-      <!-- QUESTION 1 -->
-      <rect x="250" y="135" width="400" height="90" rx="14" class="flow-node flow-question"></rect>
-      <text x="450" y="170" text-anchor="middle" class="flow-text flow-title">Does this include</text>
-      <text x="450" y="195" text-anchor="middle" class="flow-text">private learner information?</text>
-
-      <!-- YES TO STOP -->
-      <line x1="250" y1="180" x2="125" y2="180" class="flow-line"></line>
-      <text x="185" y="165" text-anchor="middle" class="flow-label-svg">Yes</text>
-
-      <rect x="20" y="145" width="210" height="90" rx="14" class="flow-node flow-stop"></rect>
-      <text x="125" y="180" text-anchor="middle" class="flow-text flow-title">Stop</text>
-      <text x="125" y="205" text-anchor="middle" class="flow-text">Do not use a public AI tool.</text>
-
-      <!-- NO DOWN -->
-      <line x1="450" y1="225" x2="450" y2="280" class="flow-line"></line>
-      <text x="480" y="258" class="flow-label-svg">No</text>
-
-      <!-- QUESTION 2 -->
-      <rect x="250" y="280" width="400" height="100" rx="14" class="flow-node flow-question"></rect>
-      <text x="450" y="315" text-anchor="middle" class="flow-text flow-title">Does this affect grades,</text>
-      <text x="450" y="340" text-anchor="middle" class="flow-text">eligibility, access, or discipline?</text>
-
-      <!-- YES TO CAUTION -->
-      <line x1="250" y1="330" x2="125" y2="330" class="flow-line"></line>
-      <text x="185" y="315" text-anchor="middle" class="flow-label-svg">Yes</text>
-
-      <rect x="20" y="285" width="210" height="100" rx="14" class="flow-node flow-caution"></rect>
-      <text x="125" y="325" text-anchor="middle" class="flow-text flow-title">Check policy</text>
-      <text x="125" y="350" text-anchor="middle" class="flow-text">Keep human judgment central.</text>
-
-      <!-- NO DOWN -->
-      <line x1="450" y1="380" x2="450" y2="435" class="flow-line"></line>
-      <text x="480" y="412" class="flow-label-svg">No</text>
-
-      <!-- CONTINUE -->
-      <rect x="250" y="435" width="400" height="95" rx="14" class="flow-node flow-continue"></rect>
-      <text x="450" y="470" text-anchor="middle" class="flow-text flow-title">AI may be appropriate</text>
-      <text x="450" y="495" text-anchor="middle" class="flow-text">Use it for brainstorming, drafting,</text>
-      <text x="450" y="518" text-anchor="middle" class="flow-text">organizing, or revision.</text>
-
-      <line x1="450" y1="530" x2="450" y2="575" class="flow-line"></line>
-
-      <!-- NEXT STEP -->
-      <rect x="285" y="575" width="330" height="40" rx="12" class="flow-node flow-next"></rect>
-      <text x="450" y="600" text-anchor="middle" class="flow-text flow-title">Next: use the Decision Card</text>
-    </svg>
-  </div>
-
-  <div class="try-box">
-    <h3>Next step</h3>
-    <p><a href="cards.html">Open the Cards page</a> and use “Should AI be used here?”</p>
-  </div>
-</div>
-          <div class="tree-path">
-            <p><strong>Question:</strong> Does the task affect grades, eligibility, accommodations, discipline, or access?</p>
-            <p><strong>If yes:</strong> Keep human judgment central and check institutional policy.</p>
-            <p><strong>If no:</strong> AI may be appropriate for brainstorming, drafting, organizing, or revision.</p>
+          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether AI should be used for a course task">
+<pre class="mermaid">
+flowchart TD
+    A([Start: I want to use AI]) --> B{Does this include private learner information?}
+    B -->|Yes| C[Stop: Do not use a public AI tool]
+    B -->|No| D{Does this affect grades, eligibility, accommodations, discipline, or access?}
+    D -->|Yes| E[Check policy and keep human judgment central]
+    D -->|No| F{Would AI replace the skill learners need to practice?}
+    F -->|Yes| G[Do not use AI this way; redesign the task]
+    F -->|No| H[AI may be appropriate for brainstorming, drafting, organizing, or revision]
+    H --> I[Next: Use the Decision Card called Should AI be used here?]
+</pre>
           </div>
 
           <div class="try-box">
             <h3>Next step</h3>
-            <p><a href="cards.html#decision-cards">Open the Decision Cards</a> and use “Should AI be used here?”</p>
+            <p><a href="cards.html">Open the Cards page</a> and use “Should AI be used here?”</p>
           </div>
         </div>
       </details>
@@ -159,75 +112,24 @@
         </summary>
 
         <div class="step-content">
-  <h3>Decision path</h3>
-
-  <div class="flowchart" aria-label="Decision path for using AI for a course task">
-
-    <div class="flow-box start">
-      Start: I want to use AI for a course task.
-    </div>
-
-    <div class="flow-arrow" aria-hidden="true">↓</div>
-
-    <div class="flow-box question">
-      Does the task involve private learner information?
-    </div>
-
-    <div class="flow-split">
-      <div class="flow-branch">
-        <div class="flow-label">Yes</div>
-        <div class="flow-box stop">
-          Stop. Do not use a public AI tool.
-        </div>
-      </div>
-
-      <div class="flow-branch">
-        <div class="flow-label">No</div>
-        <div class="flow-box continue">
-          Continue.
-        </div>
-      </div>
-    </div>
-
-    <div class="flow-arrow" aria-hidden="true">↓</div>
-
-    <div class="flow-box question">
-      Does the task affect grades, eligibility, accommodations, discipline, or access?
-    </div>
-
-    <div class="flow-split">
-      <div class="flow-branch">
-        <div class="flow-label">Yes</div>
-        <div class="flow-box caution">
-          Check policy. Keep human judgment central.
-        </div>
-      </div>
-
-      <div class="flow-branch">
-        <div class="flow-label">No</div>
-        <div class="flow-box continue">
-          AI may be appropriate for brainstorming, drafting, organizing, or revision.
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="try-box">
-    <h3>Next step</h3>
-    <p><a href="cards.html">Open the Cards page</a> and use “Should AI be used here?”</p>
-  </div>
-</div>
-
-          <div class="tree-path">
-            <p><strong>Question:</strong> Does it include copyrighted or licensed material?</p>
-            <p><strong>If yes:</strong> Check the license or use a short excerpt only if allowed.</p>
-            <p><strong>If no:</strong> You may continue with human review.</p>
+          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether content is safe to upload">
+<pre class="mermaid">
+flowchart TD
+    A([Start: I want to upload something]) --> B{Does it include learner names, grades, IDs, messages, accommodations, or submissions?}
+    B -->|Yes| C[Stop: Do not upload it to a public AI tool]
+    B -->|No| D{Does it include private institutional information?}
+    D -->|Yes| E[Stop: Use an approved institutional process]
+    D -->|No| F{Does it include copyrighted or licensed material?}
+    F -->|Yes| G[Check the license or use a safer excerpt]
+    F -->|No| H[You may continue with human review]
+    G --> I[Next: Use the Decision Card called Can I upload this?]
+    H --> I
+</pre>
           </div>
 
           <div class="try-box">
             <h3>Next step</h3>
-            <p><a href="cards.html#decision-cards">Use the “Can I upload this?” Decision Card.</a></p>
+            <p><a href="cards.html">Open the Cards page</a> and use “Can I upload this?”</p>
           </div>
         </div>
       </details>
@@ -240,28 +142,25 @@
         </summary>
 
         <div class="step-content">
-          <h3>Decision path</h3>
-          <div class="tree-path">
-            <p><strong>Question:</strong> Can learners tell what to do first?</p>
-            <p><strong>If no:</strong> revise the structure and directions before adding more content.</p>
-            <p><strong>If yes:</strong> continue.</p>
-          </div>
-
-          <div class="tree-path">
-            <p><strong>Question:</strong> Are links, files, images, tables, and media accessible?</p>
-            <p><strong>If no:</strong> fix access barriers before publishing.</p>
-            <p><strong>If yes:</strong> continue.</p>
-          </div>
-
-          <div class="tree-path">
-            <p><strong>Question:</strong> Does this support the learning goal?</p>
-            <p><strong>If no:</strong> revise or remove it.</p>
-            <p><strong>If yes:</strong> it may be ready for final review.</p>
+          <div class="mermaid-wrap" aria-label="Flowchart for reviewing whether course materials are ready for learners">
+<pre class="mermaid">
+flowchart TD
+    A([Start: I want to improve course materials]) --> B{Can learners tell what to do first?}
+    B -->|No| C[Revise the structure and directions]
+    B -->|Yes| D{Are links, files, images, tables, and media accessible?}
+    D -->|No| E[Fix access barriers before sharing]
+    D -->|Yes| F{Does this support the learning goal?}
+    F -->|No| G[Revise or remove it]
+    F -->|Yes| H{Does it reduce confusion or create more of it?}
+    H -->|Creates confusion| I[Revise for clarity]
+    H -->|Reduces confusion| J[Ready for final human review]
+    J --> K[Next: Use the Decision Card called Is this ready for learners?]
+</pre>
           </div>
 
           <div class="try-box">
             <h3>Next step</h3>
-            <p><a href="cards.html#decision-cards">Use the “Is this ready for learners?” Decision Card.</a></p>
+            <p><a href="cards.html">Open the Cards page</a> and use “Is this ready for learners?”</p>
           </div>
         </div>
       </details>
@@ -274,22 +173,25 @@
         </summary>
 
         <div class="step-content">
-          <h3>Decision path</h3>
-          <div class="tree-path">
-            <p><strong>Question:</strong> What skill are learners supposed to practice?</p>
-            <p><strong>If AI completes that skill for them:</strong> restrict AI or redesign the task.</p>
-            <p><strong>If AI supports brainstorming, revision, practice, or reflection:</strong> it may be appropriate.</p>
-          </div>
-
-          <div class="tree-path">
-            <p><strong>Question:</strong> Are expectations clear?</p>
-            <p><strong>If no:</strong> explain what AI use is allowed, what must be disclosed, and what learners must do themselves.</p>
-            <p><strong>If yes:</strong> continue.</p>
+          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether learners should use AI">
+<pre class="mermaid">
+flowchart TD
+    A([Start: I want learners to use AI]) --> B{What skill are learners supposed to practice?}
+    B --> C{Would AI complete that skill for them?}
+    C -->|Yes| D[Restrict AI or redesign the task]
+    C -->|No| E{Does AI support brainstorming, revision, practice, or reflection?}
+    E -->|Yes| F{Are expectations clear?}
+    E -->|No| G[Do not include AI unless it supports the learning goal]
+    F -->|No| H[Explain what is allowed, what must be disclosed, and what learners must do themselves]
+    F -->|Yes| I[AI use may be appropriate]
+    H --> J[Next: Use the Decision Card called Should learners use AI for this?]
+    I --> J
+</pre>
           </div>
 
           <div class="try-box">
             <h3>Next step</h3>
-            <p><a href="cards.html#decision-cards">Use the “Should learners use AI for this?” Decision Card.</a></p>
+            <p><a href="cards.html">Open the Cards page</a> and use “Should learners use AI for this?”</p>
           </div>
         </div>
       </details>
