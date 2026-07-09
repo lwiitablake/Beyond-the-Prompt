@@ -9,30 +9,28 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Mermaid renders the decision trees below. -->
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
-    <script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-
-  mermaid.initialize({
-    startOnLoad: true,
-    securityLevel: "loose",
-    theme: "base",
-    flowchart: {
-      curve: "linear",
-      htmlLabels: true,
-      wrappingWidth: 180
-    },
-    themeVariables: {
-      fontFamily: "Arial, Helvetica, sans-serif",
-      primaryColor: "#FFFFFF",
-      primaryTextColor: "#1F2933",
-      primaryBorderColor: "#1D4E89",
-      lineColor: "#52616B",
-      secondaryColor: "#FFFFFF",
-      tertiaryColor: "#F7FAFC"
-    }
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        curve: "linear",
+        htmlLabels: true
+      },
+      themeVariables: {
+        fontFamily: "Arial, Helvetica, sans-serif",
+        primaryColor: "#FFFFFF",
+        primaryTextColor: "#1F2933",
+        primaryBorderColor: "#1D4E89",
+        lineColor: "#52616B"
+      }
+    });
+  });
+</script>
   });
 </script>
 </head>
@@ -94,14 +92,14 @@
           <div class="mermaid-wrap" aria-label="Flowchart for deciding whether AI should be used for a course task">
 <pre class="mermaid">
 flowchart TD
-    A(["Start&lt;br/&gt;I want to use AI"]) --> B{"Does this include&lt;br/&gt;private learner information?"}
-    B -->|Yes| C["Stop&lt;br/&gt;Do not use a public AI tool"]
-    B -->|No| D{"Does this affect grades,&lt;br/&gt;eligibility, accommodations,&lt;br/&gt;discipline, or access?"}
-    D -->|Yes| E["Check policy&lt;br/&gt;Keep human judgment central"]
-    D -->|No| F{"Would AI replace&lt;br/&gt;the skill learners need&lt;br/&gt;to practice?"}
-    F -->|Yes| G["Do not use AI this way&lt;br/&gt;Redesign the task"]
-    F -->|No| H["AI may be appropriate&lt;br/&gt;Use it for brainstorming,&lt;br/&gt;drafting, organizing, or revision"]
-    H --> I["Next&lt;br/&gt;Use the Decision Card&lt;br/&gt;Should AI be used here?"]
+    A(["Start: I want to use AI"]) --> B{"Does this include private learner information?"}
+    B -->|Yes| C["Stop: Do not use a public AI tool"]
+    B -->|No| D{"Does this affect grades,eligibility, accommodations, discipline, or access?"}
+    D -->|Yes| E["Check policy;Keep human judgment central"]
+    D -->|No| F{"Would AI replace the skill learners need to practice?"}
+    F -->|Yes| G["Do not use AI this way Redesign the task"]
+    F -->|No| H["AI may be appropriate. Use it for brainstorming, drafting, organizing, or revision"]
+    H --> I["Next: Use the Decision Card Should AI be used here?"]
 </pre>
           </div>
 
