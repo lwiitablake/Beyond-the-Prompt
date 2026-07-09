@@ -418,6 +418,7 @@ nav a {
 
 .site-footer {
   margin-top: 4rem;
+  background: #FFFFFF;
   color: var(--muted);
 }
 
