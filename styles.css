@@ -734,3 +734,80 @@ nav a {
     padding-left: 0;
   }
 }
+
+
+/* ==========================================================
+   SVG Flowchart Prototype
+   Visual decision-tree format for the Interactive Decision Tree.
+   ========================================================== */
+
+.flowchart-svg-wrap {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.flowchart-svg {
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+  display: block;
+}
+
+.flow-node {
+  fill: #ffffff;
+  stroke-width: 3;
+}
+
+.flow-start {
+  stroke: var(--primary);
+}
+
+.flow-question {
+  stroke: var(--technical);
+}
+
+.flow-stop {
+  stroke: var(--secondary);
+}
+
+.flow-caution {
+  stroke: var(--warning);
+}
+
+.flow-continue {
+  stroke: var(--support);
+}
+
+.flow-next {
+  stroke: var(--primary);
+  fill: var(--background);
+}
+
+.flow-line {
+  stroke: var(--muted);
+  stroke-width: 3;
+  fill: none;
+  marker-end: url(#arrowhead);
+}
+
+.flow-text {
+  fill: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+.flow-title {
+  font-weight: 700;
+}
+
+.flow-label-svg {
+  fill: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
