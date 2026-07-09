@@ -1,0 +1,612 @@
+
+/* ==========================================================
+   Design Tokens
+   These variables make the site easier to maintain.
+   Semantic names are used so colors can change later without
+   rewriting the whole stylesheet.
+   ========================================================== */
+
+:root {
+  --text: #1f2933;
+  --muted: #52616b;
+
+  --primary: #1d4e89;
+  --primary-soft: #7ea5d6;
+
+  --support: #2a9d8f;
+  --support-dark: #185a52;
+  --support-soft: #7cc9c0;
+
+  --warning: #f4a261;
+  --warning-dark: #9a3412;
+  --warning-soft: #f6c18b;
+
+  --secondary: #8b4a6f;
+  --secondary-soft: #b58aa2;
+
+  --technical: #5c6f82;
+  --technical-dark: #4b5d70;
+  --technical-soft: #7b8fa3;
+
+  --practice: #7a9e7e;
+  --practice-dark: #58745b;
+  --practice-soft: #a3c1a5;
+
+  --background: #f7fafc;
+  --border: #d9e2ec;
+  --white: #ffffff;
+}
+
+/* ==========================================================
+   Base Elements
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+
+h1 {
+  margin: 0 0 .75rem 0;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+}
+
+h2 {
+  margin: 0 0 .75rem 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+h3 {
+  margin: 0 0 .5rem 0;
+}
+
+p {
+  max-width: none;
+}
+
+.hero-inner > p,
+.page-section > p,
+.footer-inner p {
+  max-width: 72ch;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: .35rem;
+}
+
+a {
+  color: var(--primary);
+}
+
+/* ==========================================================
+   Accessibility
+   ========================================================== */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* ==========================================================
+   Navigation
+   ========================================================== */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: .85rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+nav a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
+/* ==========================================================
+   Layout
+   ========================================================== */
+
+.hero {
+  background: var(--background);
+  border-bottom: 2px solid var(--border);
+}
+
+.hero-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.page-section {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 2.75rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 .5rem 0;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: .04em;
+}
+
+.hero-text {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  max-width: 850px;
+}
+
+/* ==========================================================
+   Information Cards
+   Information Cards explain concepts. They are reference
+   resources, not decision tools.
+   ========================================================== */
+
+.info-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left: 7px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.support-callout,
+.reflection {
+  background: var(--background);
+  border-left-color: var(--support);
+}
+
+.primary-callout {
+  border-left-color: var(--primary);
+}
+
+.support-callout h2,
+.reflection h2 {
+  color: var(--support-dark);
+}
+
+.primary-callout h2 {
+  color: var(--primary);
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.information-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.information-card.primary {
+  border-left-color: var(--primary);
+}
+
+.information-card.support {
+  border-left-color: var(--support);
+}
+
+.information-card.warning {
+  border-left-color: var(--warning);
+}
+
+.information-card.secondary {
+  border-left-color: var(--secondary);
+}
+
+.information-card.technical {
+  border-left-color: var(--technical);
+}
+
+.information-card.practice {
+  border-left-color: var(--practice);
+}
+
+.information-card.primary h3 {
+  color: var(--primary);
+}
+
+.information-card.support h3 {
+  color: var(--support-dark);
+}
+
+.information-card.warning h3 {
+  color: var(--warning-dark);
+}
+
+.information-card.secondary h3 {
+  color: var(--secondary);
+}
+
+.information-card.technical h3 {
+  color: var(--technical-dark);
+}
+
+.information-card.practice h3 {
+  color: var(--practice-dark);
+}
+
+/* ==========================================================
+   Workflow Cards
+   Workflow Cards show the repeated process.
+   ========================================================== */
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.workflow-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.workflow-card.primary {
+  border-left-color: var(--primary);
+}
+
+.workflow-card.support {
+  border-left-color: var(--support);
+}
+
+.workflow-card.warning {
+  border-left-color: var(--warning);
+}
+
+.workflow-card.secondary {
+  border-left-color: var(--secondary);
+}
+
+.workflow-card.technical {
+  border-left-color: var(--technical);
+}
+
+.workflow-card.practice {
+  border-left-color: var(--practice);
+}
+
+.workflow-card.primary h3 {
+  color: var(--primary);
+}
+
+.workflow-card.support h3 {
+  color: var(--support-dark);
+}
+
+.workflow-card.warning h3 {
+  color: var(--warning-dark);
+}
+
+.workflow-card.secondary h3 {
+  color: var(--secondary);
+}
+
+.workflow-card.technical h3 {
+  color: var(--technical-dark);
+}
+
+.workflow-card.practice h3 {
+  color: var(--practice-dark);
+}
+
+.step-label {
+  margin: 0 0 .35rem 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ==========================================================
+   Decision Cards
+   Decision Cards guide action. They should always include a
+   decision path and a clear result.
+   ========================================================== */
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.decision-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-bottom-width: 8px;
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: .18s ease;
+}
+
+.decision-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(31, 41, 51, .06);
+}
+
+.card-type {
+  margin: 0 0 .35rem 0;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.decision-path {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.decision-path p {
+  margin: 0 0 .75rem 0;
+}
+
+.decision-path p:last-child {
+  margin-bottom: 0;
+}
+
+.result {
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+}
+
+.decision-card.primary {
+  border-color: var(--primary-soft);
+  border-left-color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.decision-card.support {
+  border-color: var(--support-soft);
+  border-left-color: var(--support);
+  border-bottom-color: var(--support);
+}
+
+.decision-card.warning {
+  border-color: var(--warning-soft);
+  border-left-color: var(--warning);
+  border-bottom-color: var(--warning);
+}
+
+.decision-card.secondary {
+  border-color: var(--secondary-soft);
+  border-left-color: var(--secondary);
+  border-bottom-color: var(--secondary);
+}
+
+.decision-card.technical {
+  border-color: var(--technical-soft);
+  border-left-color: var(--technical);
+  border-bottom-color: var(--technical);
+}
+
+.decision-card.practice {
+  border-color: var(--practice-soft);
+  border-left-color: var(--practice);
+  border-bottom-color: var(--practice);
+}
+
+.decision-card.primary h3 {
+  color: var(--primary);
+}
+
+.decision-card.support h3 {
+  color: var(--support-dark);
+}
+
+.decision-card.warning h3 {
+  color: var(--warning-dark);
+}
+
+.decision-card.secondary h3 {
+  color: var(--secondary);
+}
+
+.decision-card.technical h3 {
+  color: var(--technical-dark);
+}
+
+.decision-card.practice h3 {
+  color: var(--practice-dark);
+}
+
+/* ==========================================================
+   Download Cards
+   ========================================================== */
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.download-card {
+  background: var(--white);
+  border: 2px solid var(--technical-soft);
+  border-left: 8px solid var(--technical);
+  border-bottom: 8px solid var(--technical);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.download-card h3 {
+  color: var(--technical-dark);
+}
+
+.download-card.practice {
+  border-color: var(--practice-soft);
+  border-left-color: var(--practice);
+  border-bottom-color: var(--practice);
+}
+
+.download-card.practice h3 {
+  color: var(--practice-dark);
+}
+
+.download-card.technical {
+  border-color: var(--technical-soft);
+  border-left-color: var(--technical);
+  border-bottom-color: var(--technical);
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .7rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.download-button:hover {
+  text-decoration: underline;
+}
+
+.download-button:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   Footer
+   Compact footer with full-width divider.
+   ========================================================== */
+
+.site-footer {
+  margin-top: 4rem;
+  color: var(--muted);
+}
+
+.footer-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+}
+
+.footer-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 1rem 0 1.25rem;
+  font-size: .88rem;
+}
+
+.footer-inner p {
+  margin: 0 0 .35rem 0;
+  max-width: none;
+}
+
+.footer-small {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* ==========================================================
+   Reduced Motion
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .decision-card {
+    transition: none;
+  }
+
+  .decision-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ==========================================================
+   Responsive Adjustments
+   ========================================================== */
+
+@media (max-width: 720px) {
+  .site-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-inner {
+    padding: 2.5rem 0;
+  }
+}
