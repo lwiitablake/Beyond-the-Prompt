@@ -91,12 +91,65 @@
         </summary>
 
         <div class="step-content">
-          <h3>Decision path</h3>
-          <div class="tree-path">
-            <p><strong>Question:</strong> Does it include names, grades, IDs, messages, accommodations, or learner work?</p>
-            <p><strong>If yes:</strong> Stop. Do not upload it to a public AI tool.</p>
-            <p><strong>If no:</strong> Continue.</p>
-          </div>
+  <h3>Decision path</h3>
+
+  <div class="flowchart" aria-label="Decision path for using AI for a course task">
+
+    <div class="flow-box start">
+      Start: I want to use AI for a course task.
+    </div>
+
+    <div class="flow-arrow" aria-hidden="true">↓</div>
+
+    <div class="flow-box question">
+      Does the task involve private learner information?
+    </div>
+
+    <div class="flow-split">
+      <div class="flow-branch">
+        <div class="flow-label">Yes</div>
+        <div class="flow-box stop">
+          Stop. Do not use a public AI tool.
+        </div>
+      </div>
+
+      <div class="flow-branch">
+        <div class="flow-label">No</div>
+        <div class="flow-box continue">
+          Continue.
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow" aria-hidden="true">↓</div>
+
+    <div class="flow-box question">
+      Does the task affect grades, eligibility, accommodations, discipline, or access?
+    </div>
+
+    <div class="flow-split">
+      <div class="flow-branch">
+        <div class="flow-label">Yes</div>
+        <div class="flow-box caution">
+          Check policy. Keep human judgment central.
+        </div>
+      </div>
+
+      <div class="flow-branch">
+        <div class="flow-label">No</div>
+        <div class="flow-box continue">
+          AI may be appropriate for brainstorming, drafting, organizing, or revision.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="try-box">
+    <h3>Next step</h3>
+    <p><a href="cards.html">Open the Cards page</a> and use “Should AI be used here?”</p>
+  </div>
+</div>
 
           <div class="tree-path">
             <p><strong>Question:</strong> Does it include copyrighted or licensed material?</p>
