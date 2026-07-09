@@ -601,3 +601,32 @@ nav a {
 .workflow-step.practice {
   border-left-color: var(--practice);
 }
+
+
+/* ==========================================================
+   Decision Card System Refinements
+   Decision Cards must include a decision path and learner benefit.
+   ========================================================== */
+
+.decision-path h4 {
+  margin: 1rem 0 0.35rem 0;
+  font-size: 1rem;
+}
+
+.decision-path h4:first-child {
+  margin-top: 0;
+}
+
+.decision-path ul {
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.decision-path li {
+  margin-bottom: 0.3rem;
+}
+
+.result {
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+}
