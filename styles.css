@@ -633,3 +633,26 @@ nav a {
   border-top: 1px solid var(--border);
   padding-top: 0.85rem;
 }
+
+
+/* ==========================================================
+   Interactive Decision Tree
+   Branching decision support for the Decide section.
+   ========================================================== */
+
+.tree-path {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left: 7px solid var(--primary);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.tree-path p {
+  margin: 0 0 0.65rem 0;
+}
+
+.tree-path p:last-child {
+  margin-bottom: 0;
+}
