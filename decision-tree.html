@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Interactive Decision Tree | Beyond the Prompt</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <p class="site-name">Beyond the Prompt</p>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Start Here</a>
+      <a href="learn.html">Learn</a>
+      <a href="decide.html">Decide</a>
+      <a href="apply.html">Apply</a>
+      <a href="downloads.html">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">INTERACTIVE DECISION TREE</p>
+      <h1>Find the right next step</h1>
+      <p class="hero-text">Use this page when you are not sure where to begin.</p>
+      <p>Open the branch closest to your task. Each branch asks a few questions and points you toward a next step.</p>
+    </div>
+  </section>
+
+  <section class="page-section info-card">
+    <h2>Before you start</h2>
+    <p><strong>What should you do?</strong> Start with the task, not the tool.</p>
+    <p><strong>Why is this better for learners?</strong> Starting with the task keeps AI use focused on learning, access, privacy, and support.</p>
+  </section>
+
+  <section class="page-section">
+    <h2>What are you trying to do?</h2>
+    <p>Open one branch. Keep the rest closed unless you need them.</p>
+
+    <div class="accordion-controls" aria-label="Decision tree display controls">
+      <button type="button" class="utility-button" id="expand-all">Expand all branches</button>
+      <button type="button" class="utility-button secondary-button" id="collapse-all">Collapse all branches</button>
+    </div>
+
+    <div class="workflow-accordion">
+
+      <details class="workflow-step primary">
+        <summary>
+          <span class="step-label">Branch 1</span>
+          <span class="step-title">I want to use AI for a course task</span>
+          <span class="step-question">Should AI be involved at all?</span>
+        </summary>
+
+        <div class="step-content">
+          <h3>Decision path</h3>
+          <div class="tree-path">
+            <p><strong>Question:</strong> Does the task involve private learner information?</p>
+            <p><strong>If yes:</strong> Do not use a public AI tool.</p>
+            <p><strong>If no:</strong> Continue.</p>
+          </div>
+
+          <div class="tree-path">
+            <p><strong>Question:</strong> Does the task affect grades, eligibility, accommodations, discipline, or access?</p>
+            <p><strong>If yes:</strong> Keep human judgment central and check institutional policy.</p>
+            <p><strong>If no:</strong> AI may be appropriate for brainstorming, drafting, organizing, or revision.</p>
+          </div>
+
+          <div class="try-box">
+            <h3>Next step</h3>
+            <p><a href="cards.html#decision-cards">Open the Decision Cards</a> and use “Should AI be used here?”</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="workflow-step support">
+        <summary>
+          <span class="step-label">Branch 2</span>
+          <span class="step-title">I want to upload something</span>
+          <span class="step-question">Is it safe to share with an AI tool?</span>
+        </summary>
+
+        <div class="step-content">
+          <h3>Decision path</h3>
+          <div class="tree-path">
+            <p><strong>Question:</strong> Does it include names, grades, IDs, messages, accommodations, or learner work?</p>
+            <p><strong>If yes:</strong> Stop. Do not upload it to a public AI tool.</p>
+            <p><strong>If no:</strong> Continue.</p>
+          </div>
+
+          <div class="tree-path">
+            <p><strong>Question:</strong> Does it include copyrighted or licensed material?</p>
+            <p><strong>If yes:</strong> Check the license or use a short excerpt only if allowed.</p>
+            <p><strong>If no:</strong> You may continue with human review.</p>
+          </div>
+
+          <div class="try-box">
+            <h3>Next step</h3>
+            <p><a href="cards.html#decision-cards">Use the “Can I upload this?” Decision Card.</a></p>
+          </div>
+        </div>
+      </details>
+
+      <details class="workflow-step warning">
+        <summary>
+          <span class="step-label">Branch 3</span>
+          <span class="step-title">I want to improve course materials</span>
+          <span class="step-question">Will this better support learners?</span>
+        </summary>
+
+        <div class="step-content">
+          <h3>Decision path</h3>
+          <div class="tree-path">
+            <p><strong>Question:</strong> Can learners tell what to do first?</p>
+            <p><strong>If no:</strong> revise the structure and directions before adding more content.</p>
+            <p><strong>If yes:</strong> continue.</p>
+          </div>
+
+          <div class="tree-path">
+            <p><strong>Question:</strong> Are links, files, images, tables, and media accessible?</p>
+            <p><strong>If no:</strong> fix access barriers before publishing.</p>
+            <p><strong>If yes:</strong> continue.</p>
+          </div>
+
+          <div class="tree-path">
+            <p><strong>Question:</strong> Does this support the learning goal?</p>
+            <p><strong>If no:</strong> revise or remove it.</p>
+            <p><strong>If yes:</strong> it may be ready for final review.</p>
+          </div>
+
+          <div class="try-box">
+            <h3>Next step</h3>
+            <p><a href="cards.html#decision-cards">Use the “Is this ready for learners?” Decision Card.</a></p>
+          </div>
+        </div>
+      </details>
+
+      <details class="workflow-step secondary">
+        <summary>
+          <span class="step-label">Branch 4</span>
+          <span class="step-title">I want learners to use AI</span>
+          <span class="step-question">Does AI support or replace the learning?</span>
+        </summary>
+
+        <div class="step-content">
+          <h3>Decision path</h3>
+          <div class="tree-path">
+            <p><strong>Question:</strong> What skill are learners supposed to practice?</p>
+            <p><strong>If AI completes that skill for them:</strong> restrict AI or redesign the task.</p>
+            <p><strong>If AI supports brainstorming, revision, practice, or reflection:</strong> it may be appropriate.</p>
+          </div>
+
+          <div class="tree-path">
+            <p><strong>Question:</strong> Are expectations clear?</p>
+            <p><strong>If no:</strong> explain what AI use is allowed, what must be disclosed, and what learners must do themselves.</p>
+            <p><strong>If yes:</strong> continue.</p>
+          </div>
+
+          <div class="try-box">
+            <h3>Next step</h3>
+            <p><a href="cards.html#decision-cards">Use the “Should learners use AI for this?” Decision Card.</a></p>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-divider"></div>
+
+  <div class="footer-inner">
+    <p><strong>Under Development.</strong> This resource is actively being developed and updated.</p>
+    <p>Created and maintained by <strong>Leah Wiitablake, Ph.D.</strong></p>
+    <p class="footer-small">© 2026 Leah Wiitablake. All rights reserved while this project is under development.</p>
+  </div>
+</footer>
+
+<script>
+  const expandButton = document.getElementById("expand-all");
+  const collapseButton = document.getElementById("collapse-all");
+  const branches = document.querySelectorAll(".workflow-step");
+
+  expandButton.addEventListener("click", function () {
+    branches.forEach(function (branch) {
+      branch.open = true;
+    });
+  });
+
+  collapseButton.addEventListener("click", function () {
+    branches.forEach(function (branch) {
+      branch.open = false;
+    });
+  });
+</script>
+
+</body>
+</html>
