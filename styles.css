@@ -467,3 +467,137 @@ nav a {
     padding: 2.5rem 0;
   }
 }
+
+
+/* ==========================================================
+   Workflow Accordion
+   Expandable workflow steps for the workflow overview page.
+   ========================================================== */
+
+.accordion-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.utility-button {
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.utility-button:hover {
+  text-decoration: underline;
+}
+
+.utility-button:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+.workflow-accordion {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.workflow-step {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.workflow-step summary {
+  cursor: pointer;
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.workflow-step summary:hover {
+  background: var(--background);
+}
+
+.workflow-step summary:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: -3px;
+}
+
+.workflow-step .step-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.workflow-step .step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.workflow-step .step-question {
+  color: var(--muted);
+}
+
+.step-content {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem;
+}
+
+.step-content h3 {
+  margin-top: 1.25rem;
+}
+
+.step-content h3:first-child {
+  margin-top: 0;
+}
+
+.try-box {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.try-box h3 {
+  margin-top: 0;
+}
+
+.workflow-step.primary {
+  border-left-color: var(--primary);
+}
+
+.workflow-step.support {
+  border-left-color: var(--support);
+}
+
+.workflow-step.warning {
+  border-left-color: var(--warning);
+}
+
+.workflow-step.secondary {
+  border-left-color: var(--secondary);
+}
+
+.workflow-step.technical {
+  border-left-color: var(--technical);
+}
+
+.workflow-step.practice {
+  border-left-color: var(--practice);
+}
