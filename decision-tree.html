@@ -15,18 +15,40 @@
   document.addEventListener("DOMContentLoaded", function () {
     mermaid.initialize({
       startOnLoad: true,
-      theme: "base",
       securityLevel: "loose",
+      theme: "base",
       flowchart: {
-        curve: "linear",
-        htmlLabels: true
+        curve: "basis",
+        htmlLabels: true,
+        nodeSpacing: 55,
+        rankSpacing: 70,
+        padding: 16
       },
       themeVariables: {
         fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "16px",
+
         primaryColor: "#FFFFFF",
         primaryTextColor: "#1F2933",
         primaryBorderColor: "#1D4E89",
-        lineColor: "#52616B"
+
+        secondaryColor: "#F7FAFC",
+        secondaryTextColor: "#1F2933",
+        secondaryBorderColor: "#2A9D8F",
+
+        tertiaryColor: "#FFFFFF",
+        tertiaryTextColor: "#1F2933",
+        tertiaryBorderColor: "#D9E2EC",
+
+        lineColor: "#52616B",
+
+        noteBkgColor: "#F7FAFC",
+        noteTextColor: "#1F2933",
+
+        edgeLabelBackground: "#FFFFFF",
+
+        clusterBkg: "#FFFFFF",
+        clusterBorder: "#D9E2EC"
       }
     });
   });
@@ -94,11 +116,11 @@
 flowchart TD
     A(["Start: I want to use AI"]) --> B{"Does this include private learner information?"}
     B -->|Yes| C["Stop: Do not use a public AI tool"]
-    B -->|No| D{"Does this affect grades,eligibility, accommodations, discipline, or access?"}
-    D -->|Yes| E["Check policy;Keep human judgment central"]
+    B -->|No| D{"Does this affect grades, eligibility, accommodations, discipline, or access?"}
+    D -->|Yes| E["Check policy. Keep human judgment central."]
     D -->|No| F{"Would AI replace the skill learners need to practice?"}
-    F -->|Yes| G["Do not use AI this way Redesign the task"]
-    F -->|No| H["AI may be appropriate. Use it for brainstorming, drafting, organizing, or revision"]
+    F -->|Yes| G["Do not use AI this way. Redesign the task."]
+    F -->|No| H["AI may be appropriate. Use it for brainstorming, drafting, organizing, or revision."]
     H --> I["Next: Use the Decision Card Should AI be used here?"]
 </pre>
           </div>
