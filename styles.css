@@ -1,4 +1,3 @@
-
 /* ==========================================================
    Design Tokens
    These variables make the site easier to maintain.
@@ -36,10 +35,6 @@
   --border: #d9e2ec;
   --white: #ffffff;
 }
-
-/* ==========================================================
-   Base Elements
-   ========================================================== */
 
 * {
   box-sizing: border-box;
@@ -89,7 +84,8 @@ p {
   max-width: 72ch;
 }
 
-ul {
+ul,
+ol {
   padding-left: 1.25rem;
 }
 
@@ -100,10 +96,6 @@ li {
 a {
   color: var(--primary);
 }
-
-/* ==========================================================
-   Accessibility
-   ========================================================== */
 
 .skip-link {
   position: absolute;
@@ -119,10 +111,6 @@ a {
 .skip-link:focus {
   left: 1rem;
 }
-
-/* ==========================================================
-   Navigation
-   ========================================================== */
 
 .site-header {
   background: var(--white);
@@ -160,10 +148,6 @@ nav a {
   text-underline-offset: .2rem;
 }
 
-/* ==========================================================
-   Layout
-   ========================================================== */
-
 .hero {
   background: var(--background);
   border-bottom: 2px solid var(--border);
@@ -194,12 +178,6 @@ nav a {
   max-width: 850px;
 }
 
-/* ==========================================================
-   Information Cards
-   Information Cards explain concepts. They are reference
-   resources, not decision tools.
-   ========================================================== */
-
 .info-card {
   background: var(--white);
   border: 2px solid var(--border);
@@ -220,143 +198,98 @@ nav a {
   border-left-color: var(--primary);
 }
 
-.support-callout h2,
-.reflection h2 {
-  color: var(--support-dark);
-}
-
-.primary-callout h2 {
-  color: var(--primary);
-}
-
-.information-grid {
+.start-grid,
+.information-grid,
+.workflow-grid,
+.decision-grid,
+.download-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
   margin-top: 1.5rem;
 }
 
-.information-card {
-  background: var(--white);
-  border: 2px solid var(--border);
-  border-left-width: 8px;
-  border-radius: 16px;
-  padding: 1.25rem;
+.start-grid,
+.information-grid,
+.download-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-
-.information-card.primary {
-  border-left-color: var(--primary);
-}
-
-.information-card.support {
-  border-left-color: var(--support);
-}
-
-.information-card.warning {
-  border-left-color: var(--warning);
-}
-
-.information-card.secondary {
-  border-left-color: var(--secondary);
-}
-
-.information-card.technical {
-  border-left-color: var(--technical);
-}
-
-.information-card.practice {
-  border-left-color: var(--practice);
-}
-
-.information-card.primary h3 {
-  color: var(--primary);
-}
-
-.information-card.support h3 {
-  color: var(--support-dark);
-}
-
-.information-card.warning h3 {
-  color: var(--warning-dark);
-}
-
-.information-card.secondary h3 {
-  color: var(--secondary);
-}
-
-.information-card.technical h3 {
-  color: var(--technical-dark);
-}
-
-.information-card.practice h3 {
-  color: var(--practice-dark);
-}
-
-/* ==========================================================
-   Workflow Cards
-   Workflow Cards show the repeated process.
-   ========================================================== */
 
 .workflow-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
 }
 
-.workflow-card {
+.decision-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.start-card,
+.information-card,
+.workflow-card,
+.decision-card,
+.download-card {
   background: var(--white);
+  text-decoration: none;
+}
+
+.start-card,
+.information-card,
+.workflow-card {
   border: 2px solid var(--border);
   border-left-width: 8px;
   border-radius: 16px;
   padding: 1.25rem;
 }
 
-.workflow-card.primary {
+.start-card:hover,
+.workflow-card:hover {
+  text-decoration: underline;
+}
+
+.primary {
   border-left-color: var(--primary);
 }
 
-.workflow-card.support {
+.support {
   border-left-color: var(--support);
 }
 
-.workflow-card.warning {
+.warning {
   border-left-color: var(--warning);
 }
 
-.workflow-card.secondary {
+.secondary {
   border-left-color: var(--secondary);
 }
 
-.workflow-card.technical {
+.technical {
   border-left-color: var(--technical);
 }
 
-.workflow-card.practice {
+.practice {
   border-left-color: var(--practice);
 }
 
-.workflow-card.primary h3 {
+.primary h3 {
   color: var(--primary);
 }
 
-.workflow-card.support h3 {
+.support h3 {
   color: var(--support-dark);
 }
 
-.workflow-card.warning h3 {
+.warning h3 {
   color: var(--warning-dark);
 }
 
-.workflow-card.secondary h3 {
+.secondary h3 {
   color: var(--secondary);
 }
 
-.workflow-card.technical h3 {
+.technical h3 {
   color: var(--technical-dark);
 }
 
-.workflow-card.practice h3 {
+.practice h3 {
   color: var(--practice-dark);
 }
 
@@ -366,21 +299,7 @@ nav a {
   font-weight: 700;
 }
 
-/* ==========================================================
-   Decision Cards
-   Decision Cards guide action. They should always include a
-   decision path and a clear result.
-   ========================================================== */
-
-.decision-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
 .decision-card {
-  background: var(--white);
   border: 2px solid var(--border);
   border-left-width: 8px;
   border-bottom-width: 8px;
@@ -460,43 +379,7 @@ nav a {
   border-bottom-color: var(--practice);
 }
 
-.decision-card.primary h3 {
-  color: var(--primary);
-}
-
-.decision-card.support h3 {
-  color: var(--support-dark);
-}
-
-.decision-card.warning h3 {
-  color: var(--warning-dark);
-}
-
-.decision-card.secondary h3 {
-  color: var(--secondary);
-}
-
-.decision-card.technical h3 {
-  color: var(--technical-dark);
-}
-
-.decision-card.practice h3 {
-  color: var(--practice-dark);
-}
-
-/* ==========================================================
-   Download Cards
-   ========================================================== */
-
-.download-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
 .download-card {
-  background: var(--white);
   border: 2px solid var(--technical-soft);
   border-left: 8px solid var(--technical);
   border-bottom: 8px solid var(--technical);
@@ -508,23 +391,8 @@ nav a {
   color: var(--technical-dark);
 }
 
-.download-card.practice {
-  border-color: var(--practice-soft);
-  border-left-color: var(--practice);
-  border-bottom-color: var(--practice);
-}
-
-.download-card.practice h3 {
-  color: var(--practice-dark);
-}
-
-.download-card.technical {
-  border-color: var(--technical-soft);
-  border-left-color: var(--technical);
-  border-bottom-color: var(--technical);
-}
-
-.download-button {
+.download-button,
+.button-link {
   display: inline-block;
   margin-top: 1rem;
   padding: .7rem 1rem;
@@ -535,19 +403,16 @@ nav a {
   border-radius: 999px;
 }
 
-.download-button:hover {
+.download-button:hover,
+.button-link:hover {
   text-decoration: underline;
 }
 
-.download-button:focus-visible {
+.download-button:focus-visible,
+.button-link:focus-visible {
   outline: 3px solid var(--warning);
   outline-offset: 3px;
 }
-
-/* ==========================================================
-   Footer
-   Compact footer with full-width divider.
-   ========================================================== */
 
 .site-footer {
   margin-top: 4rem;
@@ -577,10 +442,6 @@ nav a {
   font-size: .8rem;
 }
 
-/* ==========================================================
-   Reduced Motion
-   ========================================================== */
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -595,10 +456,6 @@ nav a {
     box-shadow: none;
   }
 }
-
-/* ==========================================================
-   Responsive Adjustments
-   ========================================================== */
 
 @media (max-width: 720px) {
   .site-header-inner {
