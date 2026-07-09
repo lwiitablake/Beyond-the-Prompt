@@ -1,0 +1,635 @@
+/* ==========================================================
+   Design Tokens
+   These variables make the site easier to maintain.
+   Semantic names are used so colors can change later without
+   rewriting the whole stylesheet.
+   ========================================================== */
+
+
+:root {
+  --text: #1f2933;
+  --muted: #52616b;
+
+  --primary: #1d4e89;
+  --primary-soft: #7ea5d6;
+
+  --support: #2a9d8f;
+  --support-dark: #185a52;
+  --support-soft: #7cc9c0;
+
+  --warning: #f4a261;
+  --warning-dark: #9a3412;
+  --warning-soft: #f6c18b;
+
+  --secondary: #8b4a6f;
+  --secondary-soft: #b58aa2;
+
+  --technical: #5c6f82;
+  --technical-dark: #4b5d70;
+  --technical-soft: #7b8fa3;
+
+  --practice: #7a9e7e;
+  --practice-dark: #58745b;
+  --practice-soft: #a3c1a5;
+
+  --background: #f7fafc;
+  --border: #d9e2ec;
+  --white: #FFFFFF;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #F2F2F2;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+
+h1 {
+  margin: 0 0 .75rem 0;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+}
+
+h2 {
+  margin: 0 0 .75rem 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+h3 {
+  margin: 0 0 .5rem 0;
+}
+
+p {
+  max-width: none;
+}
+
+.hero-inner > p,
+.page-section > p,
+.footer-inner p {
+  max-width: 72ch;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: .35rem;
+}
+
+a {
+  color: var(--primary);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: .85rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+nav a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
+.hero {
+  background: var(--background);
+  border-bottom: 2px solid var(--border);
+}
+
+.hero-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.page-section {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 2.75rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 .5rem 0;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: .04em;
+}
+
+.hero-text {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  max-width: 850px;
+}
+
+.info-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left: 7px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.support-callout,
+.reflection {
+  background: var(--background);
+  border-left-color: var(--support);
+}
+
+.primary-callout {
+  border-left-color: var(--primary);
+}
+
+.start-grid,
+.information-grid,
+.workflow-grid,
+.decision-grid,
+.download-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.start-grid,
+.information-grid,
+.download-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.decision-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.start-card,
+.information-card,
+.workflow-card,
+.decision-card,
+.download-card {
+  background: var(--white);
+  text-decoration: none;
+}
+
+.start-card,
+.information-card,
+.workflow-card {
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.start-card:hover,
+.workflow-card:hover {
+  text-decoration: underline;
+}
+
+.primary {
+  border-left-color: var(--primary);
+}
+
+.support {
+  border-left-color: var(--support);
+}
+
+.warning {
+  border-left-color: var(--warning);
+}
+
+.secondary {
+  border-left-color: var(--secondary);
+}
+
+.technical {
+  border-left-color: var(--technical);
+}
+
+.practice {
+  border-left-color: var(--practice);
+}
+
+.primary h3 {
+  color: var(--primary);
+}
+
+.support h3 {
+  color: var(--support-dark);
+}
+
+.warning h3 {
+  color: var(--warning-dark);
+}
+
+.secondary h3 {
+  color: var(--secondary);
+}
+
+.technical h3 {
+  color: var(--technical-dark);
+}
+
+.practice h3 {
+  color: var(--practice-dark);
+}
+
+.step-label {
+  margin: 0 0 .35rem 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.decision-card {
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-bottom-width: 8px;
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: .18s ease;
+}
+
+.decision-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(31, 41, 51, .06);
+}
+
+.card-type {
+  margin: 0 0 .35rem 0;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.decision-path {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.decision-path p {
+  margin: 0 0 .75rem 0;
+}
+
+.decision-path p:last-child {
+  margin-bottom: 0;
+}
+
+.result {
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+}
+
+.decision-card.primary {
+  border-color: var(--primary-soft);
+  border-left-color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.decision-card.support {
+  border-color: var(--support-soft);
+  border-left-color: var(--support);
+  border-bottom-color: var(--support);
+}
+
+.decision-card.warning {
+  border-color: var(--warning-soft);
+  border-left-color: var(--warning);
+  border-bottom-color: var(--warning);
+}
+
+.decision-card.secondary {
+  border-color: var(--secondary-soft);
+  border-left-color: var(--secondary);
+  border-bottom-color: var(--secondary);
+}
+
+.decision-card.technical {
+  border-color: var(--technical-soft);
+  border-left-color: var(--technical);
+  border-bottom-color: var(--technical);
+}
+
+.decision-card.practice {
+  border-color: var(--practice-soft);
+  border-left-color: var(--practice);
+  border-bottom-color: var(--practice);
+}
+
+.download-card {
+  border: 2px solid var(--technical-soft);
+  border-left: 8px solid var(--technical);
+  border-bottom: 8px solid var(--technical);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.download-card h3 {
+  color: var(--technical-dark);
+}
+
+.download-button,
+.button-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .7rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.download-button:hover,
+.button-link:hover {
+  text-decoration: underline;
+}
+
+.download-button:focus-visible,
+.button-link:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  background: #FFFFFF;
+  color: var(--muted);
+}
+
+.footer-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+}
+
+.footer-inner {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 1rem 0 1.25rem;
+  font-size: .88rem;
+}
+
+.footer-inner p {
+  margin: 0 0 .35rem 0;
+  max-width: none;
+}
+
+.footer-small {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .decision-card {
+    transition: none;
+  }
+
+  .decision-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-inner {
+    padding: 2.5rem 0;
+  }
+}
+
+
+/* ==========================================================
+   Workflow Accordion
+   Expandable workflow steps for the workflow overview page.
+   ========================================================== */
+
+.accordion-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.utility-button {
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.utility-button:hover {
+  text-decoration: underline;
+}
+
+.utility-button:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+.workflow-accordion {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.workflow-step {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.workflow-step summary {
+  cursor: pointer;
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.workflow-step summary:hover {
+  background: var(--background);
+}
+
+.workflow-step summary:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: -3px;
+}
+
+.workflow-step .step-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.workflow-step .step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.workflow-step .step-question {
+  color: var(--muted);
+}
+
+.step-content {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem;
+}
+
+.step-content h3 {
+  margin-top: 1.25rem;
+}
+
+.step-content h3:first-child {
+  margin-top: 0;
+}
+
+.try-box {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.try-box h3 {
+  margin-top: 0;
+}
+
+.workflow-step.primary {
+  border-left-color: var(--primary);
+}
+
+.workflow-step.support {
+  border-left-color: var(--support);
+}
+
+.workflow-step.warning {
+  border-left-color: var(--warning);
+}
+
+.workflow-step.secondary {
+  border-left-color: var(--secondary);
+}
+
+.workflow-step.technical {
+  border-left-color: var(--technical);
+}
+
+.workflow-step.practice {
+  border-left-color: var(--practice);
+}
+
+
+/* ==========================================================
+   Decision Card System Refinements
+   Decision Cards must include a decision path and learner benefit.
+   ========================================================== */
+
+.decision-path h4 {
+  margin: 1rem 0 0.35rem 0;
+  font-size: 1rem;
+}
+
+.decision-path h4:first-child {
+  margin-top: 0;
+}
+
+.decision-path ul {
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.decision-path li {
+  margin-bottom: 0.3rem;
+}
+
+.result {
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+}
