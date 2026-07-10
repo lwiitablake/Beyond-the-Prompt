@@ -7,29 +7,6 @@
   <title>Interactive Decision Tree | Beyond the Prompt</title>
 
   <link rel="stylesheet" href="styles.css" />
-
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: "base",
-        securityLevel: "loose",
-        flowchart: {
-          curve: "linear",
-          htmlLabels: true
-        },
-        themeVariables: {
-          fontFamily: "Arial, Helvetica, sans-serif",
-          primaryColor: "#FFFFFF",
-          primaryTextColor: "#1F2933",
-          primaryBorderColor: "#1D4E89",
-          lineColor: "#52616B"
-        }
-      });
-    });
-  </script>
 </head>
 
 <body>
@@ -80,24 +57,78 @@
 
       <details class="workflow-step primary">
         <summary>
-          <span class="step-label">Branch 1</span>
           <span class="step-title">I want to use AI for a course task</span>
           <span class="step-question">Should AI be involved at all?</span>
         </summary>
 
         <div class="step-content">
-          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether AI should be used for a course task">
-<pre class="mermaid">
-flowchart TD
-    A(["Start: I want to use AI"]) --> B{"Does this include private learner information?"}
-    B -->|Yes| C["Stop: Do not use a public AI tool"]
-    B -->|No| D{"Does this affect grades, eligibility, accommodations, discipline, or access?"}
-    D -->|Yes| E["Check policy. Keep human judgment central."]
-    D -->|No| F{"Would AI replace the skill learners need to practice?"}
-    F -->|Yes| G["Do not use AI this way. Redesign the task."]
-    F -->|No| H["AI may be appropriate. Use it for brainstorming, drafting, organizing, or revision."]
-    H --> I["Next: Use the Decision Card Should AI be used here?"]
-</pre>
+          <div class="html-flowchart" aria-label="Decision tree for deciding whether AI should be used for a course task">
+
+            <div class="flow-node flow-start">
+              Start: I want to use AI
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true"></div>
+
+            <div class="flow-node flow-question">
+              Does this include private learner information?
+            </div>
+
+            <div class="flow-branches">
+              <div class="flow-branch">
+                <div class="flow-branch-label">Yes</div>
+                <div class="flow-node flow-stop">
+                  Stop: Do not use a public AI tool.
+                </div>
+              </div>
+
+              <div class="flow-branch">
+                <div class="flow-branch-label">No</div>
+                <div class="flow-node flow-question">
+                  Does this affect grades, eligibility, accommodations, discipline, or access?
+                </div>
+
+                <div class="flow-branches nested">
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">Yes</div>
+                    <div class="flow-node flow-action">
+                      Check policy. Keep human judgment central.
+                    </div>
+                  </div>
+
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">No</div>
+                    <div class="flow-node flow-question">
+                      Would AI replace the skill learners need to practice?
+                    </div>
+
+                    <div class="flow-branches nested">
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">Yes</div>
+                        <div class="flow-node flow-stop">
+                          Do not use AI this way. Redesign the task.
+                        </div>
+                      </div>
+
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">No</div>
+                        <div class="flow-node flow-continue">
+                          AI may be appropriate. Use it for brainstorming, drafting, organizing, or revision.
+                        </div>
+
+                        <div class="flow-arrow" aria-hidden="true"></div>
+
+                        <div class="flow-node flow-next">
+                          Next: Use the Decision Card “Should AI be used here?”
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <div class="try-box">
@@ -109,25 +140,77 @@ flowchart TD
 
       <details class="workflow-step support">
         <summary>
-          <span class="step-label">Branch 2</span>
           <span class="step-title">I want to upload something</span>
           <span class="step-question">Is it safe to share with an AI tool?</span>
         </summary>
 
         <div class="step-content">
-          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether content is safe to upload">
-<pre class="mermaid">
-flowchart TD
-    A(["Start: I want to upload something"]) --> B{"Does it include learner names, grades, IDs, messages, accommodations, or submissions?"}
-    B -->|Yes| C["Stop: Do not upload it to a public AI tool"]
-    B -->|No| D{"Does it include private institutional information?"}
-    D -->|Yes| E["Stop: Use an approved institutional process"]
-    D -->|No| F{"Does it include copyrighted or licensed material?"}
-    F -->|Yes| G["Check the license or use a safer excerpt"]
-    F -->|No| H["You may continue with human review"]
-    G --> I["Next: Use the Decision Card Can I upload this?"]
-    H --> I
-</pre>
+          <div class="html-flowchart" aria-label="Decision tree for deciding whether content is safe to upload">
+
+            <div class="flow-node flow-start">
+              Start: I want to upload something
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true"></div>
+
+            <div class="flow-node flow-question">
+              Does it include learner names, grades, IDs, messages, accommodations, or submissions?
+            </div>
+
+            <div class="flow-branches">
+              <div class="flow-branch">
+                <div class="flow-branch-label">Yes</div>
+                <div class="flow-node flow-stop">
+                  Stop: Do not upload it to a public AI tool.
+                </div>
+              </div>
+
+              <div class="flow-branch">
+                <div class="flow-branch-label">No</div>
+                <div class="flow-node flow-question">
+                  Does it include private institutional information?
+                </div>
+
+                <div class="flow-branches nested">
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">Yes</div>
+                    <div class="flow-node flow-stop">
+                      Stop: Use an approved institutional process.
+                    </div>
+                  </div>
+
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">No</div>
+                    <div class="flow-node flow-question">
+                      Does it include copyrighted or licensed material?
+                    </div>
+
+                    <div class="flow-branches nested">
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">Yes</div>
+                        <div class="flow-node flow-action">
+                          Check the license or use a safer excerpt.
+                        </div>
+                      </div>
+
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">No</div>
+                        <div class="flow-node flow-continue">
+                          You may continue with human review.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flow-arrow" aria-hidden="true"></div>
+
+                    <div class="flow-node flow-next">
+                      Next: Use the Decision Card “Can I upload this?”
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <div class="try-box">
@@ -139,26 +222,95 @@ flowchart TD
 
       <details class="workflow-step warning">
         <summary>
-          <span class="step-label">Branch 3</span>
           <span class="step-title">I want to improve course materials</span>
           <span class="step-question">Will this better support learners?</span>
         </summary>
 
         <div class="step-content">
-          <div class="mermaid-wrap" aria-label="Flowchart for reviewing whether course materials are ready for learners">
-<pre class="mermaid">
-flowchart TD
-    A(["Start: I want to improve course materials"]) --> B{"Can learners tell what to do first?"}
-    B -->|No| C["Revise the structure and directions"]
-    B -->|Yes| D{"Are links, files, images, tables, and media accessible?"}
-    D -->|No| E["Fix access barriers before sharing"]
-    D -->|Yes| F{"Does this support the learning goal?"}
-    F -->|No| G["Revise or remove it"]
-    F -->|Yes| H{"Does it reduce confusion or create more of it?"}
-    H -->|Creates confusion| I["Revise for clarity"]
-    H -->|Reduces confusion| J["Ready for final human review"]
-    J --> K["Next: Use the Decision Card Is this ready for learners?"]
-</pre>
+          <div class="html-flowchart" aria-label="Decision tree for reviewing whether course materials are ready for learners">
+
+            <div class="flow-node flow-start">
+              Start: I want to improve course materials
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true"></div>
+
+            <div class="flow-node flow-question">
+              Can learners tell what to do first?
+            </div>
+
+            <div class="flow-branches">
+              <div class="flow-branch">
+                <div class="flow-branch-label">No</div>
+                <div class="flow-node flow-action">
+                  Revise the structure and directions.
+                </div>
+              </div>
+
+              <div class="flow-branch">
+                <div class="flow-branch-label">Yes</div>
+                <div class="flow-node flow-question">
+                  Are links, files, images, tables, and media accessible?
+                </div>
+
+                <div class="flow-branches nested">
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">No</div>
+                    <div class="flow-node flow-action">
+                      Fix access barriers before sharing.
+                    </div>
+                  </div>
+
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">Yes</div>
+                    <div class="flow-node flow-question">
+                      Does this support the learning goal?
+                    </div>
+
+                    <div class="flow-branches nested">
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">No</div>
+                        <div class="flow-node flow-action">
+                          Revise or remove it.
+                        </div>
+                      </div>
+
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">Yes</div>
+                        <div class="flow-node flow-question">
+                          Does it reduce confusion or create more of it?
+                        </div>
+
+                        <div class="flow-branches nested">
+                          <div class="flow-branch">
+                            <div class="flow-branch-label">Creates confusion</div>
+                            <div class="flow-node flow-action">
+                              Revise for clarity.
+                            </div>
+                          </div>
+
+                          <div class="flow-branch">
+                            <div class="flow-branch-label">Reduces confusion</div>
+                            <div class="flow-node flow-continue">
+                              Ready for final human review.
+                            </div>
+
+                            <div class="flow-arrow" aria-hidden="true"></div>
+
+                            <div class="flow-node flow-next">
+                              Next: Use the Decision Card “Is this ready for learners?”
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <div class="try-box">
@@ -170,26 +322,83 @@ flowchart TD
 
       <details class="workflow-step secondary">
         <summary>
-          <span class="step-label">Branch 4</span>
           <span class="step-title">I want learners to use AI</span>
           <span class="step-question">Does AI support or replace the learning?</span>
         </summary>
 
         <div class="step-content">
-          <div class="mermaid-wrap" aria-label="Flowchart for deciding whether learners should use AI">
-<pre class="mermaid">
-flowchart TD
-    A(["Start: I want learners to use AI"]) --> B{"What skill are learners supposed to practice?"}
-    B --> C{"Would AI complete that skill for them?"}
-    C -->|Yes| D["Restrict AI or redesign the task"]
-    C -->|No| E{"Does AI support brainstorming, revision, practice, or reflection?"}
-    E -->|Yes| F{"Are expectations clear?"}
-    E -->|No| G["Do not include AI unless it supports the learning goal"]
-    F -->|No| H["Explain what is allowed, what must be disclosed, and what learners must do themselves"]
-    F -->|Yes| I["AI use may be appropriate"]
-    H --> J["Next: Use the Decision Card Should learners use AI for this?"]
-    I --> J
-</pre>
+          <div class="html-flowchart" aria-label="Decision tree for deciding whether learners should use AI">
+
+            <div class="flow-node flow-start">
+              Start: I want learners to use AI
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true"></div>
+
+            <div class="flow-node flow-question">
+              What skill are learners supposed to practice?
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true"></div>
+
+            <div class="flow-node flow-question">
+              Would AI complete that skill for them?
+            </div>
+
+            <div class="flow-branches">
+              <div class="flow-branch">
+                <div class="flow-branch-label">Yes</div>
+                <div class="flow-node flow-action">
+                  Restrict AI or redesign the task.
+                </div>
+              </div>
+
+              <div class="flow-branch">
+                <div class="flow-branch-label">No</div>
+                <div class="flow-node flow-question">
+                  Does AI support brainstorming, revision, practice, or reflection?
+                </div>
+
+                <div class="flow-branches nested">
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">No</div>
+                    <div class="flow-node flow-action">
+                      Do not include AI unless it supports the learning goal.
+                    </div>
+                  </div>
+
+                  <div class="flow-branch">
+                    <div class="flow-branch-label">Yes</div>
+                    <div class="flow-node flow-question">
+                      Are expectations clear?
+                    </div>
+
+                    <div class="flow-branches nested">
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">No</div>
+                        <div class="flow-node flow-action">
+                          Explain what is allowed, what must be disclosed, and what learners must do themselves.
+                        </div>
+                      </div>
+
+                      <div class="flow-branch">
+                        <div class="flow-branch-label">Yes</div>
+                        <div class="flow-node flow-continue">
+                          AI use may be appropriate.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flow-arrow" aria-hidden="true"></div>
+
+                    <div class="flow-node flow-next">
+                      Next: Use the Decision Card “Should learners use AI for this?”
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <div class="try-box">
