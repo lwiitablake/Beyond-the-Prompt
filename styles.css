@@ -815,28 +815,29 @@ nav a {
 
 /* ==========================================================
    HTML Decision Tree
-   CSS-only flowchart layout for the Interactive Decision Tree.
+   Responsive flowchart layout for the Interactive Decision Tree.
    ========================================================== */
 
 .html-flowchart {
+  width: 100%;
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 18px;
-  padding: 1.25rem;
-  overflow-x: auto;
+  padding: 1.5rem;
   margin: 1rem 0;
+  overflow: visible;
 }
 
 .flow-node {
-  width: min(100%, 520px);
+  width: min(100%, 640px);
   margin: 0 auto;
   background: var(--white);
   border: 2px solid var(--border);
   color: var(--text);
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.25rem;
   text-align: center;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .flow-start,
@@ -847,7 +848,7 @@ nav a {
 .flow-action,
 .flow-stop,
 .flow-continue {
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .flow-next {
@@ -879,9 +880,11 @@ nav a {
   border-color: var(--primary);
 }
 
+/* Vertical connector with arrow */
+
 .flow-arrow {
   width: 2px;
-  height: 2rem;
+  height: 2.25rem;
   background: var(--muted);
   margin: 0 auto;
   position: relative;
@@ -898,77 +901,92 @@ nav a {
   border-top: 9px solid var(--muted);
 }
 
-.flow-branches {
+/* Yes / No branch group */
+
+.flow-branches,
+.flow-branches.nested {
+  width: min(100%, 760px);
+  margin: 1.5rem auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(240px, 1fr));
-  gap: 1rem;
-  margin: 1.25rem 0;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Each branch becomes its own clear pathway */
+
+.flow-branch {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0;
   position: relative;
 }
 
-.flow-branches::before {
-  content: "";
-  position: absolute;
-  top: -0.65rem;
-  left: 25%;
-  right: 25%;
-  height: 2px;
-  background: var(--muted);
-}
-
-.flow-branch {
-  display: grid;
-  gap: 0.5rem;
-  align-content: start;
-}
+/* Connector from the parent question into each branch */
 
 .flow-branch::before {
   content: "";
   width: 2px;
-  height: 1rem;
+  height: 1.5rem;
   background: var(--muted);
-  margin: -1rem auto 0;
+  display: block;
 }
+
+/* Arrowhead below each branch line */
+
+.flow-branch::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -9px;
+  margin-bottom: 0.35rem;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid var(--muted);
+}
+
+/* Yes / No label */
 
 .flow-branch-label {
   display: inline-block;
-  justify-self: center;
+  margin-bottom: 0.5rem;
   background: var(--white);
   color: var(--muted);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.15rem 0.6rem;
+  padding: 0.2rem 0.7rem;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
-.flow-branches.nested {
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
-  margin-top: 1rem;
+/* Keep nested questions and outcomes readable */
+
+.flow-branch > .flow-node {
+  width: min(100%, 640px);
 }
+
+.flow-branch > .flow-branches {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* Smaller screens */
 
 @media (max-width: 760px) {
   .html-flowchart {
     padding: 1rem;
   }
 
-  .flow-branches,
-  .flow-branches.nested {
-    grid-template-columns: 1fr;
-  }
-
-  .flow-branches::before {
-    display: none;
-  }
-
-  .flow-branch::before {
-    height: 1.25rem;
-    margin-top: 0;
-  }
-
   .flow-node {
     width: 100%;
+    padding: 0.9rem 1rem;
+  }
+
+  .flow-branches,
+  .flow-branches.nested {
+    width: 100%;
+    gap: 1.25rem;
   }
 }
