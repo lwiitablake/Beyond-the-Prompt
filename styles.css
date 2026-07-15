@@ -853,64 +853,67 @@ nav a {
 
 /* ==========================================================
    CONTINUING-PATH ROW
-   One branch exits left; the main path continues straight down.
+   One branch exits left; the main path continues right/down.
 
-   The side branch uses an L-shaped connector built from two
-   real elements (.decision-h-arm + .decision-v-drop).
-   No percentage math. No pseudo-element coordinates.
+   Layout: equal 2-column grid (50% / 50%), no gap.
+
+   With equal columns:
+     Left column center  = 25% of row width  (side branch)
+     Right column center = 75% of row width  (continuing path)
+
+   These percentages are exact for equal columns — reliable.
+
+   ::before  = horizontal bar from 25% to 75%
+   ::after   = upward stem at 75% (above the continuing column)
+
+   Each column uses a .decision-v-stem real element for the
+   downward stub from the bar to the label pill.
    ========================================================== */
 
-.decision-choice-row {
-  width: 100%;
-  max-width: 860px;
-}
-
 .decision-choice-row.continuing-path {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  position: relative;
+  width: min(100%, 780px);
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
-  margin: 0;
-  padding: 0;
+  align-items: start;
 }
 
-/* Left column: side branch. */
+/* Horizontal bar: from center of left col to center of right col. */
+.decision-choice-row.continuing-path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  background: var(--muted);
+}
+
+/* Upward stem from the question node above.
+   At 75% = center of the right (continuing) column. */
+.decision-choice-row.continuing-path::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 75%;
+  width: 3px;
+  height: 1.5rem;
+  transform: translateX(-50%);
+  background: var(--muted);
+}
+
 .decision-side-branch {
-  flex: 0 0 44%;
+  grid-column: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* L-shaped connector wrapper. */
-.decision-branch-connector {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-/* Horizontal arm: stretches from the side branch to the
-   continuing column. Height and margin-top align it with
-   the top of the v-stem in the continuing column. */
-.decision-h-arm {
-  flex: 1;
-  height: 3px;
-  background: var(--muted);
-  margin-top: 0.75rem;
-}
-
-/* Vertical drop: falls from the arm to the label pill. */
-.decision-v-drop {
-  width: 3px;
-  height: 1.5rem;
-  background: var(--muted);
-  flex-shrink: 0;
-}
-
-/* Right column: continuing path. */
 .decision-choice-continue {
-  flex: 1;
+  grid-column: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1008,16 +1011,22 @@ nav a {
     font-size: 1rem;
   }
 
-  /* Stack continuing-path vertically. */
+    /* Stack continuing-path vertically. */
   .decision-choice-row.continuing-path {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    gap: 1.5rem;
   }
 
-  .decision-side-branch {
-    flex: none;
-    width: 100%;
+  .decision-choice-row.continuing-path::before,
+  .decision-choice-row.continuing-path::after {
+    display: none;
+  }
+
+  .decision-side-branch,
+  .decision-choice-continue {
+    grid-column: 1;
+    padding-top: 1.5rem;
   }
 
   /* Hide the L-shaped arm on mobile. */
