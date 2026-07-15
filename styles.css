@@ -637,67 +637,44 @@ nav a {
 /* ==========================================================
    Interactive Decision Tree
    Branching decision support for the Decide section.
-   ========================================================== */
 
-.tree-path {
-  background: var(--white);
-  border: 2px solid var(--border);
-  border-left: 7px solid var(--primary);
-  border-radius: 14px;
-  padding: 1rem;
-  margin: 1rem 0;
-}
+   LAYOUT APPROACH
+   ---------------
+   The main path flows vertically down the center using normal
+   document flow (no absolute positioning for structural lines).
 
-.tree-path p {
-  margin: 0 0 0.65rem 0;
-}
+   Two row types handle branching:
 
-.tree-path p:last-child {
-  margin-bottom: 0;
-}
+   1. continuing-path  — one branch exits (side branch left),
+                         main path continues straight down.
+   2. final-path       — both branches end (symmetric two columns).
 
-
-
-
-/* ==========================================================
-   HTML Decision Tree
-   Responsive guided-decision layout for the Interactive
-   Decision Tree page.
+   All connector lines are real DOM elements, not pseudo-elements,
+   so their positions are determined by normal flow rather than
+   percentage math. This eliminates disconnected-line bugs.
    ========================================================== */
 
 .decision-flow {
   width: 100%;
-  max-width: 940px;
+  max-width: 860px;
   margin: 1.5rem auto;
   padding: 2rem;
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Prevent content from forcing the layout wider. */
-
+/* Prevent any child from forcing the layout wider. */
 .decision-flow *,
 .decision-choice-row,
+.decision-side-branch,
 .decision-choice,
 .decision-node {
   min-width: 0;
-  max-width: 100%;
   box-sizing: border-box;
-}
-
-/* Visually hide text while keeping it available to screen readers. */
-
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
 }
 
 /* ==========================================================
@@ -705,8 +682,7 @@ nav a {
    ========================================================== */
 
 .decision-node {
-  width: min(100%, 640px);
-  margin: 0 auto;
+  width: min(100%, 620px);
   padding: 1.05rem 1.35rem;
   background: var(--white);
   color: var(--text);
@@ -717,14 +693,11 @@ nav a {
   overflow-wrap: break-word;
 }
 
-/* Start and question nodes use oval/stadium shapes. */
-
+/* Start and question nodes: oval / stadium shape. */
 .decision-start,
 .decision-question {
   border-radius: 999px;
 }
-
-/* Questions should be the visual focus. */
 
 .decision-question {
   padding: 1.2rem 1.5rem;
@@ -732,16 +705,14 @@ nav a {
   font-size: 1.04rem;
 }
 
-/* Actions and outcomes use rectangular shapes. */
-
+/* Action and outcome nodes: rectangular. */
 .decision-action,
 .decision-stop,
 .decision-recommendation {
   border-radius: 8px;
 }
 
-/* Next steps use rounded rectangles. */
-
+/* Next step node: rounded rectangle. */
 .decision-next {
   border-radius: 16px;
   background: var(--background);
@@ -751,13 +722,8 @@ nav a {
    Semantic colors
    ========================================================== */
 
-.decision-start {
-  border-color: var(--primary);
-}
-
-.decision-question {
-  border-color: var(--technical);
-}
+.decision-start    { border-color: var(--primary); }
+.decision-question { border-color: var(--technical); }
 
 .decision-action {
   border-color: var(--warning);
@@ -776,15 +742,7 @@ nav a {
   background: rgba(42, 157, 143, 0.07);
 }
 
-.decision-next {
-  border-color: var(--primary);
-}
-
-/* The old visible continue box is no longer used. */
-
-.decision-continue {
-  display: none;
-}
+.decision-next { border-color: var(--primary); }
 
 /* ==========================================================
    Main vertical arrows
@@ -794,8 +752,8 @@ nav a {
   position: relative;
   width: 3px;
   height: 3.25rem;
-  margin: 0 auto;
   background: var(--muted);
+  flex-shrink: 0;
 }
 
 .decision-arrow::after {
@@ -810,83 +768,8 @@ nav a {
 }
 
 /* ==========================================================
-   Final two-outcome rows
-   Used when both branches end in visible outcomes.
+   Branch arrows (inside side branches and final-path cells)
    ========================================================== */
-
-.decision-choice-row {
-  position: relative;
-  width: min(100%, 840px);
-  margin: 2rem auto;
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
-  align-items: start;
-}
-
-/* Horizontal split line. */
-
-.decision-choice-row::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 25%;
-  right: 25%;
-  height: 3px;
-  background: var(--muted);
-}
-
-/* Stem between the parent question and split. */
-
-.decision-choice-row::after {
-  content: "";
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  width: 3px;
-  height: 1.5rem;
-  transform: translateX(-50%);
-  background: var(--muted);
-}
-
-.decision-choice {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  align-content: start;
-}
-
-/* Connector from the split line to each branch. */
-
-.decision-choice::before {
-  content: "";
-  position: absolute;
-  top: -2rem;
-  left: 50%;
-  width: 3px;
-  height: 2rem;
-  transform: translateX(-50%);
-  background: var(--muted);
-}
-
-.decision-label {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin: 0 0 0.45rem;
-  padding: 0.2rem 0.7rem;
-  background: var(--white);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
 
 .decision-branch-arrow {
   position: relative;
@@ -894,6 +777,7 @@ nav a {
   height: 1.65rem;
   margin: 0 auto;
   background: var(--muted);
+  flex-shrink: 0;
 }
 
 .decision-branch-arrow::after {
@@ -907,48 +791,10 @@ nav a {
   border-top: 10px solid var(--muted);
 }
 
-.decision-choice .decision-node {
-  width: 100%;
-}
-
 /* ==========================================================
-   Continuing paths
-   The side branch shows an outcome. The center branch
-   continues downward without a redundant text box.
+   Path marker
+   Downward arrow inside the continuing-path cell.
    ========================================================== */
-
-.decision-choice-row.continuing-path {
-  width: min(100%, 900px);
-  grid-template-columns:
-    minmax(180px, 1fr)
-    minmax(260px, 1.25fr)
-    minmax(180px, 1fr);
-}
-
-/* Place the stopping/corrective outcome on the left. */
-
-.continuing-path > .decision-choice:first-child {
-  grid-column: 1;
-}
-
-/* Keep the continuing path in the visual center. */
-
-.continuing-path > .decision-choice-continue {
-  grid-column: 2;
-}
-
-/* Connect only the side branch and the center pathway. */
-
-.continuing-path::before {
-  left: 16.666%;
-  right: 50%;
-}
-
-.decision-choice-continue .decision-label {
-  margin-bottom: 0.35rem;
-}
-
-/* Visible downward pathway replacing the old Continue box. */
 
 .decision-path-marker {
   position: relative;
@@ -956,6 +802,7 @@ nav a {
   height: 2.5rem;
   margin: 0 auto;
   background: var(--muted);
+  flex-shrink: 0;
 }
 
 .decision-path-marker::after {
@@ -970,10 +817,178 @@ nav a {
 }
 
 /* ==========================================================
-   Responsive behavior
+   Vertical stem
+   Short downward line from the top of a choice cell to the
+   label pill. Real element — no pseudo-element math.
+   ========================================================== */
+
+.decision-v-stem {
+  width: 3px;
+  height: 1.5rem;
+  margin: 0 auto;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   Label pills
+   ========================================================== */
+
+.decision-label {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.2rem 0.7rem;
+  background: var(--white);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   CONTINUING-PATH ROW
+   One branch exits left; the main path continues straight down.
+
+   The side branch uses an L-shaped connector built from two
+   real elements (.decision-h-arm + .decision-v-drop).
+   No percentage math. No pseudo-element coordinates.
+   ========================================================== */
+
+.decision-choice-row {
+  width: 100%;
+  max-width: 860px;
+}
+
+.decision-choice-row.continuing-path {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Left column: side branch. */
+.decision-side-branch {
+  flex: 0 0 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* L-shaped connector wrapper. */
+.decision-branch-connector {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Horizontal arm: stretches from the side branch to the
+   continuing column. Height and margin-top align it with
+   the top of the v-stem in the continuing column. */
+.decision-h-arm {
+  flex: 1;
+  height: 3px;
+  background: var(--muted);
+  margin-top: 0.75rem;
+}
+
+/* Vertical drop: falls from the arm to the label pill. */
+.decision-v-drop {
+  width: 3px;
+  height: 1.5rem;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Right column: continuing path. */
+.decision-choice-continue {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================
+   FINAL-PATH ROW
+   Both branches end in visible outcome nodes.
+   Symmetric two-column layout — left:50% is reliable here.
+   ========================================================== */
+
+.decision-choice-row.final-path {
+  position: relative;
+  width: min(100%, 780px);
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Horizontal bar spanning both columns. */
+.decision-choice-row.final-path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(25% + 0.5rem);
+  right: calc(25% + 0.5rem);
+  height: 3px;
+  background: var(--muted);
+}
+
+/* Incoming vertical stem from the question node above. */
+.decision-choice-row.final-path::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 3px;
+  height: 1.5rem;
+  transform: translateX(-50%);
+  background: var(--muted);
+}
+
+/* Each cell in a final-path row. */
+.decision-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.decision-choice .decision-node {
+  width: 100%;
+}
+
+/* ==========================================================
+   Visually hidden (screen-reader text)
+   ========================================================== */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ==========================================================
+   Responsive: stack everything on small screens
    ========================================================== */
 
 @media (max-width: 760px) {
+
   .decision-flow {
     padding: 1.1rem;
     border-radius: 14px;
@@ -984,8 +999,6 @@ nav a {
     padding: 0.95rem 1rem;
   }
 
-  /* Long questions look cleaner with moderate rounding on mobile. */
-
   .decision-start,
   .decision-question {
     border-radius: 20px;
@@ -995,37 +1008,60 @@ nav a {
     font-size: 1rem;
   }
 
-  .decision-choice-row,
+  /* Stack continuing-path vertically. */
   .decision-choice-row.continuing-path {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .decision-side-branch {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Hide the L-shaped arm on mobile. */
+  .decision-branch-connector {
+    display: none;
+  }
+
+  /* Replace the hidden arm with a simple short vertical stem. */
+  .decision-side-branch::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 1.5rem;
+    background: var(--muted);
+    margin: 0 auto;
+  }
+
+  .decision-choice-continue {
+    width: 100%;
+  }
+
+  /* Stack final-path vertically. */
+  .decision-choice-row.final-path {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.5rem;
     padding-top: 0;
+    width: 100%;
   }
 
-  .continuing-path > .decision-choice:first-child,
-  .continuing-path > .decision-choice-continue {
-    grid-column: 1;
-  }
-
-  .decision-choice-row::before,
-  .decision-choice-row::after {
+  .decision-choice-row.final-path::before,
+  .decision-choice-row.final-path::after {
     display: none;
   }
 
   .decision-choice {
-    padding-top: 1.6rem;
+    padding-top: 1.5rem;
   }
 
-  .decision-choice::before {
-    top: 0;
-    height: 1.6rem;
+  .decision-arrow {
+    height: 2.75rem;
   }
 
   .decision-path-marker {
     height: 2rem;
   }
 
-  .decision-arrow {
-    height: 2.75rem;
-  }
 }
