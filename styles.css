@@ -661,82 +661,117 @@ nav a {
 
 /* ==========================================================
    HTML Decision Tree
-   Responsive flowchart layout for the Interactive Decision Tree.
+   Responsive, centered decision paths for the Interactive
+   Decision Tree page.
    ========================================================== */
 
-.html-flowchart {
+.decision-flow {
   width: 100%;
+  max-width: 920px;
+  margin: 1rem auto;
+  padding: 1.5rem;
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 18px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  overflow: visible;
 }
 
-.flow-node {
-  width: min(100%, 640px);
+/* Prevent any child from forcing the page wider. */
+
+.decision-flow *,
+.decision-choice-row,
+.decision-choice,
+.decision-node {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   Nodes
+   ========================================================== */
+
+.decision-node {
+  width: min(100%, 620px);
   margin: 0 auto;
-  background: var(--white);
-  border: 2px solid var(--border);
-  color: var(--text);
   padding: 1rem 1.25rem;
+  background: var(--white);
+  color: var(--text);
+  border: 2px solid var(--border);
   text-align: center;
   font-weight: 700;
   line-height: 1.45;
+  overflow-wrap: break-word;
 }
 
-.flow-start,
-.flow-question {
+/* Start and questions use the oval/stadium shape. */
+
+.decision-start,
+.decision-question {
   border-radius: 999px;
 }
 
-.flow-action,
-.flow-stop,
-.flow-continue {
+/* Actions and outcomes use rectangular shapes. */
+
+.decision-action,
+.decision-stop,
+.decision-continue,
+.decision-recommendation {
   border-radius: 8px;
 }
 
-.flow-next {
+/* Next steps use rounded rectangles. */
+
+.decision-next {
   border-radius: 16px;
   background: var(--background);
 }
 
-.flow-start {
+/* ==========================================================
+   Semantic colors
+   ========================================================== */
+
+.decision-start {
   border-color: var(--primary);
 }
 
-.flow-question {
+.decision-question {
   border-color: var(--technical);
 }
 
-.flow-action {
+.decision-action {
   border-color: var(--warning);
 }
 
-.flow-stop {
+.decision-stop {
   border-color: var(--secondary);
 }
 
-.flow-continue {
+.decision-continue {
+  border-color: var(--technical-soft);
+  color: var(--muted);
+}
+
+.decision-recommendation {
   border-color: var(--support);
 }
 
-.flow-next {
+.decision-next {
   border-color: var(--primary);
 }
 
-/* Vertical connector with arrow */
+/* ==========================================================
+   Main vertical arrows
+   ========================================================== */
 
-.flow-arrow {
-  width: 2px;
-  height: 2.25rem;
-  background: var(--muted);
-  margin: 0 auto;
+.decision-arrow {
   position: relative;
+  width: 3px;
+  height: 2.4rem;
+  margin: 0 auto;
+  background: var(--muted);
 }
 
-.flow-arrow::after {
+.decision-arrow::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -744,95 +779,150 @@ nav a {
   transform: translateX(-50%);
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 9px solid var(--muted);
+  border-top: 10px solid var(--muted);
 }
 
-/* Yes / No branch group */
+/* ==========================================================
+   Yes / No choices
+   ========================================================== */
 
-.flow-branches,
-.flow-branches.nested {
-  width: min(100%, 760px);
+.decision-choice-row {
+  position: relative;
+  width: min(100%, 820px);
   margin: 1.5rem auto;
+  padding-top: 1.75rem;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
 }
 
-/* Each branch becomes its own clear pathway */
+/* Horizontal line coming out of the parent question. */
 
-.flow-branch {
-  width: 100%;
+.decision-choice-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  background: var(--muted);
+}
+
+/* Short central stem from the parent question. */
+
+.decision-choice-row::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 3px;
+  height: 1.5rem;
+  transform: translateX(-50%);
+  background: var(--muted);
+}
+
+.decision-choice {
+  position: relative;
   display: grid;
   justify-items: center;
-  gap: 0;
-  position: relative;
+  align-content: start;
 }
 
-/* Connector from the parent question into each branch */
+/* Vertical connection from the split line to each choice. */
 
-.flow-branch::before {
+.decision-choice::before {
   content: "";
-  width: 2px;
-  height: 1.5rem;
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  width: 3px;
+  height: 1.75rem;
+  transform: translateX(-50%);
   background: var(--muted);
-  display: block;
 }
 
-/* Arrowhead below each branch line */
-
-.flow-branch::after {
-  content: "";
-  width: 0;
-  height: 0;
-  margin-top: -9px;
-  margin-bottom: 0.35rem;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 9px solid var(--muted);
-}
-
-/* Yes / No label */
-
-.flow-branch-label {
+.decision-label {
+  position: relative;
+  z-index: 1;
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.45rem;
+  padding: 0.2rem 0.7rem;
   background: var(--white);
   color: var(--muted);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.2rem 0.7rem;
   font-size: 0.78rem;
   font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
-/* Keep nested questions and outcomes readable */
-
-.flow-branch > .flow-node {
-  width: min(100%, 640px);
+.decision-branch-arrow {
+  position: relative;
+  width: 3px;
+  height: 1.4rem;
+  margin: 0 auto;
+  background: var(--muted);
 }
 
-.flow-branch > .flow-branches {
+.decision-branch-arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--muted);
+}
+
+.decision-choice .decision-node {
   width: 100%;
-  margin-top: 1.5rem;
 }
 
-/* Smaller screens */
+/* ==========================================================
+   Responsive behavior
+   ========================================================== */
 
 @media (max-width: 760px) {
-  .html-flowchart {
+  .decision-flow {
     padding: 1rem;
+    border-radius: 14px;
   }
 
-  .flow-node {
+  .decision-node {
     width: 100%;
     padding: 0.9rem 1rem;
   }
 
-  .flow-branches,
-  .flow-branches.nested {
-    width: 100%;
-    gap: 1.25rem;
+  /* Large oval radii make long mobile questions look awkward. */
+
+  .decision-start,
+  .decision-question {
+    border-radius: 20px;
   }
+
+  .decision-choice-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 0;
+  }
+
+  .decision-choice-row::before,
+  .decision-choice-row::after {
+    display: none;
+  }
+
+  .decision-choice {
+    padding-top: 1.5rem;
+  }
+
+  .decision-choice::before {
+    top: 0;
+    height: 1.5rem;
+  }
+}
 }
