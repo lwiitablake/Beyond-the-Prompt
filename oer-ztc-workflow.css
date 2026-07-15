@@ -1,1 +1,610 @@
 
+/* ==========================================================
+   OER/ZTC Responsible AI Workflow
+   Page-specific styles.
+
+   This file intentionally uses page-specific class names so
+   it does not interfere with the rest of the website.
+   ========================================================== */
+
+/* ==========================================================
+   Page Layout
+   ========================================================== */
+
+.oer-workflow-page {
+  padding-top: 2rem;
+}
+
+/* ==========================================================
+   Core Principle
+   ========================================================== */
+
+.workflow-core-principle {
+  margin: 0 0 2rem;
+  padding: 1.25rem;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left: 8px solid var(--primary);
+  border-radius: 16px;
+}
+
+.workflow-core-principle h2 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.workflow-core-principle p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================
+   Seven-Step Overview
+   ========================================================== */
+
+.workflow-map {
+  margin: 0 0 1.5rem;
+}
+
+.workflow-map h2 {
+  margin-bottom: 0.75rem;
+}
+
+.workflow-map-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-map-list li {
+  display: grid;
+  gap: 0.15rem;
+  justify-items: center;
+  margin: 0;
+  padding: 0.65rem 0.4rem;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-bottom: 5px solid var(--primary);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.workflow-map-number {
+  color: var(--primary);
+  font-size: 0.76rem;
+}
+
+.workflow-map-list li.judgment-map-step {
+  border-bottom-color: var(--support);
+}
+
+.workflow-map-list li.judgment-map-step .workflow-map-number {
+  color: var(--support-dark);
+}
+
+/* ==========================================================
+   Phase Labels
+   ========================================================== */
+
+.workflow-phase-label {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.setup-phase {
+  color: var(--primary);
+}
+
+.judgment-phase {
+  color: var(--support-dark);
+}
+
+/* ==========================================================
+   Main Step Accordions
+   ========================================================== */
+
+.workflow-step-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.detailed-workflow-step {
+  overflow: hidden;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  border-radius: 18px;
+}
+
+.detailed-workflow-step.setup-step {
+  border-left-color: var(--primary);
+}
+
+.detailed-workflow-step.judgment-step-card {
+  border-left-color: var(--support);
+}
+
+.detailed-workflow-step > summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.15rem 3.25rem 1.15rem 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.detailed-workflow-step > summary::-webkit-details-marker {
+  display: none;
+}
+
+.detailed-workflow-step > summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.judgment-step-card > summary::after {
+  color: var(--support-dark);
+}
+
+.detailed-workflow-step[open] > summary::after {
+  content: "−";
+}
+
+.detailed-workflow-step > summary:hover {
+  background: var(--background);
+}
+
+.detailed-workflow-step > summary:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: -3px;
+}
+
+.workflow-step-number {
+  color: var(--border);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.workflow-step-summary-text {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.workflow-step-label {
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.judgment-step-card .workflow-step-label {
+  color: var(--support-dark);
+}
+
+.workflow-step-title {
+  color: var(--text);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.judgment-step-card .workflow-step-title {
+  color: var(--support-dark);
+}
+
+.workflow-step-short {
+  color: var(--muted);
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.detailed-workflow-content {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================================
+   Step Content
+   ========================================================== */
+
+.workflow-action {
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: 12px;
+}
+
+.workflow-action.judgment-action {
+  border-left-color: var(--support);
+}
+
+.workflow-action h3 {
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.workflow-action.judgment-action h3 {
+  color: var(--support-dark);
+}
+
+.workflow-action p:last-child {
+  margin-bottom: 0;
+}
+
+.workflow-content-section {
+  margin: 0 0 1.5rem;
+}
+
+.workflow-content-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.workflow-content-section h4 {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.02rem;
+}
+
+.workflow-content-section p:first-of-type {
+  margin-top: 0;
+}
+
+.workflow-example,
+.workflow-note,
+.prompt-sample {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.workflow-example {
+  border-left: 6px solid var(--primary);
+}
+
+.prompt-sample {
+  border-left: 6px solid var(--secondary);
+}
+
+.prompt-sample p {
+  font-style: italic;
+}
+
+.workflow-note {
+  border-left: 6px solid var(--warning);
+}
+
+/* ==========================================================
+   Simple Nested Details
+   ========================================================== */
+
+.simple-detail {
+  margin: 1rem 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.simple-detail > summary {
+  position: relative;
+  padding: 0.75rem 2.75rem 0.75rem 1rem;
+  background: var(--background);
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.simple-detail > summary::-webkit-details-marker {
+  display: none;
+}
+
+.simple-detail > summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.simple-detail[open] > summary::after {
+  content: "−";
+}
+
+.simple-detail > summary:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: -3px;
+}
+
+.simple-detail > div {
+  padding: 1rem;
+}
+
+/* ==========================================================
+   Numbered Review Questions
+   ========================================================== */
+
+.numbered-review-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.numbered-review-list > li {
+  margin: 0;
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.numbered-review-list h4 {
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+}
+
+.numbered-review-list p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Step 6 Review Dropdowns
+   ========================================================== */
+
+.review-dropdown {
+  margin: 0 0 0.75rem;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.review-dropdown > summary {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 3rem 0.85rem 1rem;
+  background: var(--background);
+  cursor: pointer;
+  list-style: none;
+}
+
+.review-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.review-dropdown > summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: var(--support-dark);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.review-dropdown[open] > summary::after {
+  content: "−";
+}
+
+.review-dropdown > summary:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: -3px;
+}
+
+.review-dropdown > summary span:first-child {
+  color: var(--support-dark);
+  font-weight: 700;
+}
+
+.review-dropdown > summary span:last-child {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.review-dropdown-content {
+  padding: 1rem;
+}
+
+.review-dropdown-content > *:first-child {
+  margin-top: 0;
+}
+
+.review-dropdown-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Guiding Questions and Reflection
+   ========================================================== */
+
+.workflow-guiding-question,
+.workflow-reflection {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: 12px;
+}
+
+.workflow-guiding-question.judgment-question,
+.workflow-reflection {
+  border-left-color: var(--support);
+}
+
+.workflow-guiding-label {
+  margin: 0 0 0.25rem;
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.judgment-question .workflow-guiding-label,
+.workflow-reflection .workflow-guiding-label {
+  color: var(--support-dark);
+}
+
+.workflow-guiding-question p:last-child,
+.workflow-reflection ul:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Step 7 Outcomes
+   ========================================================== */
+
+.workflow-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.workflow-outcome-grid article {
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--support);
+  border-radius: 12px;
+}
+
+.workflow-outcome-grid h4 {
+  margin: 0 0 0.4rem;
+  color: var(--support-dark);
+}
+
+.workflow-outcome-grid p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Responsive Table
+   ========================================================== */
+
+.responsive-table {
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.responsive-table:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+.responsive-table table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.responsive-table caption {
+  padding-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.responsive-table th {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ==========================================================
+   Attribution
+   ========================================================== */
+
+.workflow-attribution {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.workflow-attribution p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ==========================================================
+   Responsive Adjustments
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .workflow-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailed-workflow-step > summary {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding-right: 3rem;
+  }
+
+  .workflow-step-number {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detailed-workflow-content {
+    padding: 1rem;
+  }
+
+  .workflow-step-short {
+    font-size: 0.88rem;
+  }
+}
