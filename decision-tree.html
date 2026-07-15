@@ -30,47 +30,29 @@
       <div class="hero-inner">
         <p class="eyebrow">INTERACTIVE DECISION TREE</p>
         <h1>Find the right next step</h1>
-        <p class="hero-text">
-          Use this page when you are not sure where to begin.
-        </p>
-        <p>
-          Open the branch closest to your task. Each branch asks a few questions and points you toward a next step.
-        </p>
+        <p class="hero-text">Use this page when you are not sure where to begin.</p>
+        <p>Open the branch closest to your task. Each branch asks a few questions and points you toward a next step.</p>
       </div>
     </section>
 
     <section class="page-section info-card">
       <h2>Before you start</h2>
-      <p>
-        <strong>What should you do?</strong>
-        Start with the task, not the tool.
-      </p>
-      <p>
-        <strong>Why is this better for learners?</strong>
-        Starting with the task keeps AI use focused on learning, access, privacy, and support.
-      </p>
+      <p><strong>What should you do?</strong> Start with the task, not the tool.</p>
+      <p><strong>Why is this better for learners?</strong> Starting with the task keeps AI use focused on learning, access, privacy, and support.</p>
     </section>
 
     <section class="page-section">
       <h2>Choose your starting point</h2>
-      <p>
-        Open the branch closest to what you are trying to do. Keep the rest closed unless you need them.
-      </p>
+      <p>Open the branch closest to what you are trying to do. Keep the rest closed unless you need them.</p>
 
       <div class="accordion-controls" aria-label="Decision tree display controls">
-        <button type="button" class="utility-button" id="expand-all">
-          Expand all branches
-        </button>
-        <button type="button" class="utility-button secondary-button" id="collapse-all">
-          Collapse all branches
-        </button>
+        <button type="button" class="utility-button" id="expand-all">Expand all branches</button>
+        <button type="button" class="utility-button secondary-button" id="collapse-all">Collapse all branches</button>
       </div>
 
       <div class="workflow-accordion">
 
-        <!-- ============================================================
-             BRANCH 1: I want to use AI for a course task
-             ============================================================ -->
+        <!-- BRANCH 1 -->
         <details class="workflow-step primary">
           <summary>
             <span class="step-title">I want to use AI for a course task</span>
@@ -81,15 +63,11 @@
 
               <div class="decision-node decision-start">Start: I want to use AI</div>
               <div class="decision-arrow" aria-hidden="true"></div>
-
               <div class="decision-node decision-question">Does this include private learner information?</div>
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If yes">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">Yes</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-stop">Stop: Do not use a public AI tool.</div>
@@ -106,10 +84,7 @@
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If yes">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">Yes</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Pause: Check policy. Keep human judgment central.</div>
@@ -143,7 +118,6 @@
               <div class="decision-node decision-next">Next: Use the Decision Card &#8220;Should AI be used here?&#8221;</div>
 
             </div>
-
             <div class="try-box">
               <h3>Next step</h3>
               <p><a href="cards.html">Open the Cards page</a> and use &#8220;Should AI be used here?&#8221;</p>
@@ -151,9 +125,7 @@
           </div>
         </details>
 
-        <!-- ============================================================
-             BRANCH 2: I want to upload something
-             ============================================================ -->
+        <!-- BRANCH 2 -->
         <details class="workflow-step support">
           <summary>
             <span class="step-title">I want to upload something</span>
@@ -164,15 +136,11 @@
 
               <div class="decision-node decision-start">Start: I want to upload something</div>
               <div class="decision-arrow" aria-hidden="true"></div>
-
               <div class="decision-node decision-question">Does it include learner names, grades, IDs, messages, accommodations, or submissions?</div>
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If yes">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">Yes</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-stop">Stop: Do not upload it to a public AI tool.</div>
@@ -189,10 +157,7 @@
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If yes">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">Yes</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-stop">Stop: Use an approved institutional process.</div>
@@ -226,7 +191,6 @@
               <div class="decision-node decision-next">Next: Use the Decision Card &#8220;Can I upload this?&#8221;</div>
 
             </div>
-
             <div class="try-box">
               <h3>Next step</h3>
               <p><a href="cards.html">Open the Cards page</a> and use &#8220;Can I upload this?&#8221;</p>
@@ -234,9 +198,7 @@
           </div>
         </details>
 
-        <!-- ============================================================
-             BRANCH 3: I want to improve course materials
-             ============================================================ -->
+        <!-- BRANCH 3 -->
         <details class="workflow-step warning">
           <summary>
             <span class="step-title">I want to improve course materials</span>
@@ -247,15 +209,11 @@
 
               <div class="decision-node decision-start">Start: I want to improve course materials</div>
               <div class="decision-arrow" aria-hidden="true"></div>
-
               <div class="decision-node decision-question">Can learners tell what to do first?</div>
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If no">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">No</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Revise the structure and directions.</div>
@@ -272,10 +230,7 @@
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If no">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">No</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Fix access barriers before sharing.</div>
@@ -292,10 +247,7 @@
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If no">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">No</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Revise or remove it.</div>
@@ -329,7 +281,6 @@
               <div class="decision-node decision-next">Next: Use the Decision Card &#8220;Is this ready for learners?&#8221;</div>
 
             </div>
-
             <div class="try-box">
               <h3>Next step</h3>
               <p><a href="cards.html">Open the Cards page</a> and use &#8220;Is this ready for learners?&#8221;</p>
@@ -337,9 +288,7 @@
           </div>
         </details>
 
-        <!-- ============================================================
-             BRANCH 4: I want learners to use AI
-             ============================================================ -->
+        <!-- BRANCH 4 -->
         <details class="workflow-step secondary">
           <summary>
             <span class="step-title">I want learners to use AI</span>
@@ -350,18 +299,13 @@
 
               <div class="decision-node decision-start">Start: I want learners to use AI</div>
               <div class="decision-arrow" aria-hidden="true"></div>
-
               <div class="decision-node decision-question">What skill are learners supposed to practice?</div>
               <div class="decision-arrow" aria-hidden="true"></div>
-
               <div class="decision-node decision-question">Would AI complete that skill for them?</div>
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If yes">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">Yes</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Restrict AI or redesign the task.</div>
@@ -378,10 +322,7 @@
 
               <div class="decision-choice-row continuing-path">
                 <div class="decision-side-branch" aria-label="If no">
-                  <div class="decision-branch-connector" aria-hidden="true">
-                    <div class="decision-h-arm"></div>
-                    <div class="decision-v-drop"></div>
-                  </div>
+                  <div class="decision-v-stem" aria-hidden="true"></div>
                   <p class="decision-label">No</p>
                   <div class="decision-branch-arrow" aria-hidden="true"></div>
                   <div class="decision-node decision-action">Do not include AI unless it supports the learning goal.</div>
@@ -415,7 +356,6 @@
               <div class="decision-node decision-next">Next: Use the Decision Card &#8220;Should learners use AI for this?&#8221;</div>
 
             </div>
-
             <div class="try-box">
               <h3>Next step</h3>
               <p><a href="cards.html">Open the Cards page</a> and use &#8220;Should learners use AI for this?&#8221;</p>
@@ -441,7 +381,6 @@
     const expandButton  = document.getElementById("expand-all");
     const collapseButton = document.getElementById("collapse-all");
     const branches      = document.querySelectorAll(".workflow-step");
-
     expandButton.addEventListener("click", function () {
       branches.forEach(function (branch) { branch.open = true; });
     });
