@@ -519,7 +519,6 @@ nav a {
   border: 2px solid var(--border);
   border-left-width: 8px;
   border-radius: 18px;
-  overflow: hidden;
 }
 
 .workflow-step summary {
@@ -527,6 +526,7 @@ nav a {
   padding: 1.25rem;
   display: grid;
   gap: 0.35rem;
+  border-radius: 18px;
 }
 
 .workflow-step summary:hover {
