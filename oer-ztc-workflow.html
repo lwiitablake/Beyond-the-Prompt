@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,31 +29,33 @@
 
   <main id="main-content">
 
-    <section class="hero">
+    <!-- =====================================================
+         Page Introduction
+         ===================================================== -->
+
+    <section class="hero oer-hero">
       <div class="hero-inner">
         <p class="eyebrow">BEYOND THE PROMPT</p>
 
-        <h1>
-          Responsible AI Workflow for Adapting OER/ZTC Course Materials
-        </h1>
+        <h1>Responsible AI Workflow for Adapting OER/ZTC Course Materials</h1>
 
         <p class="hero-text">
-          This workflow guides you through a repeatable, human-centered
-          process for using AI to improve OER and ZTC course materials.
-          Each step shows you what to do and why it matters. Open the
-          sections you need.
+          Use this repeatable, human-centered process to improve Open
+          Educational Resources and zero-textbook-cost course materials
+          with AI.
         </p>
 
         <p>
-          Work through the steps in order the first time. With practice,
-          the process becomes faster and more intuitive.
+          Each step explains what to do and why it matters. Work through
+          the steps in order the first time. Later, open only the sections
+          you need.
         </p>
       </div>
     </section>
 
-    <section class="page-section workflow-intro">
+    <section class="page-section oer-workflow-page">
 
-      <div class="info-card workflow-principle">
+      <div class="workflow-core-principle">
         <h2>Core principle</h2>
 
         <p>
@@ -63,17 +64,24 @@
         </p>
       </div>
 
-      <nav class="workflow-overview" aria-label="Workflow step overview">
-  <ul>
-    <li>1. Identify</li>
-    <li>2. Decide</li>
-    <li>3. Choose</li>
-    <li>4. Context</li>
-    <li>5. Draft</li>
-    <li>6. Judge</li>
-    <li>7. Revise</li>
-  </ul>
-</nav>
+      <!-- ===================================================
+           Compact Overview
+           =================================================== -->
+
+      <section class="workflow-map" aria-labelledby="workflow-map-heading">
+        <h2 id="workflow-map-heading">The seven steps</h2>
+
+        <ol class="workflow-map-list">
+          <li><span>1</span> Identify</li>
+          <li><span>2</span> Decide</li>
+          <li><span>3</span> Choose</li>
+          <li><span>4</span> Context</li>
+          <li><span>5</span> Draft</li>
+          <li class="judgment-step"><span>6</span> Judge</li>
+          <li class="judgment-step"><span>7</span> Revise</li>
+        </ol>
+      </section>
+
       <div
         class="accordion-controls"
         aria-label="Workflow display controls"
@@ -95,45 +103,36 @@
         </button>
       </div>
 
-      <p class="workflow-group-label setup-label">
+      <p class="workflow-phase-label setup-phase">
         Steps 1–5: Setup and generation
       </p>
 
-      <div class="oer-workflow">
+      <div class="workflow-step-list">
 
         <!-- ==================================================
-             STEP 1
+             Step 1
              ================================================== -->
 
-        <details class="oer-step setup">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">01</span>
+        <details class="detailed-workflow-step setup-step">
+          <summary>
+            <span class="workflow-step-number">01</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 1</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 1</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Identify the Instructional Challenge
               </span>
 
-              <span class="oer-step-preview">
-                Identify a specific, observable problem with an existing
-                OER or ZTC course material before involving AI in any way.
+              <span class="workflow-step-short">
+                Name the specific problem before involving AI.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-1-what"
-            >
-              <h3 id="step-1-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action">
+              <h3>What should you do?</h3>
 
               <p>
                 Identify a specific, observable problem with an existing
@@ -141,570 +140,481 @@
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
-
-              <div class="workflow-panel">
-                <p>
-                  AI produces output based on what you ask for. If the
-                  problem is vague, the output will be generic and may not
-                  address what students actually need. A clearly defined
-                  problem produces a more useful draft and makes the review
-                  process easier because you know exactly what you were
-                  trying to solve.
-                </p>
-
-                <p>
-                  This step also protects against using AI for its own sake.
-                  If you cannot name a specific problem, that is a signal to
-                  pause before continuing.
-                </p>
-              </div>
-            </details>
-
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step
-              </summary>
-
-              <div class="workflow-panel">
-                <p>Ask yourself one or more of the following:</p>
-
-                <ul>
-                  <li>
-                    What are students confused about or struggling with in
-                    this module?
-                  </li>
-
-                  <li>
-                    Where do students disengage, skip steps, or ask the
-                    same questions repeatedly?
-                  </li>
-
-                  <li>
-                    What is missing—a learning goal, a clear sequence, or a
-                    connection to the assessment?
-                  </li>
-
-                  <li>
-                    What would make this material more usable without
-                    changing what it teaches?
-                  </li>
-
-                  <li>
-                    Is the problem about clarity, structure, alignment,
-                    accessibility, or engagement?
-                  </li>
-                </ul>
-
-                <p>
-                  <strong>
-                    Write it down in one or two sentences before moving to
-                    Step 2.
-                  </strong>
-                </p>
-
-                <div class="workflow-example">
-                  <p>
-                    <strong>Example:</strong>
-                    “Students cannot tell what to do first in this module.
-                    There is no sequence, no learning goal, and no
-                    explanation of why each resource matters.”
-                  </p>
-                </div>
-
-                <p><strong>Common examples:</strong></p>
-
-                <ul>
-                  <li>
-                    Students are unsure what to focus on in the OER reading.
-                  </li>
-
-                  <li>
-                    Assignment instructions are unclear or missing context.
-                  </li>
-
-                  <li>
-                    The module lacks a clear learning path from start to
-                    finish.
-                  </li>
-
-                  <li>
-                    Students encounter unfamiliar terminology with no
-                    support.
-                  </li>
-
-                  <li>
-                    The connection between the OER content and the
-                    assessment is not visible.
-                  </li>
-
-                  <li>
-                    The module feels like a list of links rather than a
-                    learning experience.
-                  </li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="guiding-question">
-              <p class="guiding-question-label">Guiding question</p>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
               <p>
-                What specific problem are we trying to solve?
+                AI produces output based on what you ask for. If the
+                problem is vague, the output will be generic and may not
+                address what students actually need.
               </p>
+
+              <p>
+                A clearly defined problem produces a more useful draft and
+                makes the review easier because you know exactly what you
+                were trying to solve.
+              </p>
+
+              <p>
+                This step also protects against using AI simply because it
+                is available. If you cannot name a specific problem, pause
+                before continuing.
+              </p>
+            </section>
+
+            <section class="workflow-content-section">
+              <h3>How to do this step</h3>
+
+              <p>Ask one or more of these questions:</p>
+
+              <ul>
+                <li>
+                  What are students confused about or struggling with?
+                </li>
+
+                <li>
+                  Where do students skip steps or repeatedly ask the same
+                  questions?
+                </li>
+
+                <li>
+                  What is missing: a learning goal, a clear sequence, or a
+                  connection to the assessment?
+                </li>
+
+                <li>
+                  What would make the material more usable without changing
+                  what it teaches?
+                </li>
+
+                <li>
+                  Is the problem about clarity, structure, alignment,
+                  accessibility, or engagement?
+                </li>
+              </ul>
+
+              <p>
+                <strong>
+                  Write the problem in one or two sentences before moving
+                  to Step 2.
+                </strong>
+              </p>
+
+              <div class="workflow-example">
+                <p>
+                  <strong>Example:</strong>
+                  “Students cannot tell what to do first in this module.
+                  There is no sequence, no learning goal, and no explanation
+                  of why each resource matters.”
+                </p>
+              </div>
+
+              <details class="simple-detail">
+                <summary>See common examples</summary>
+
+                <div>
+                  <ul>
+                    <li>
+                      Students are unsure what to focus on in the OER
+                      reading.
+                    </li>
+
+                    <li>
+                      Assignment instructions are unclear or missing
+                      context.
+                    </li>
+
+                    <li>
+                      The module lacks a clear learning path.
+                    </li>
+
+                    <li>
+                      Students encounter unfamiliar terminology with no
+                      support.
+                    </li>
+
+                    <li>
+                      The connection between the OER content and the
+                      assessment is not visible.
+                    </li>
+
+                    <li>
+                      The module feels like a list of links rather than a
+                      learning experience.
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </section>
+
+            <div class="workflow-guiding-question">
+              <p class="workflow-guiding-label">Guiding question</p>
+              <p>What specific problem are we trying to solve?</p>
             </div>
           </div>
         </details>
 
         <!-- ==================================================
-             STEP 2
+             Step 2
              ================================================== -->
 
-        <details class="oer-step setup">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">02</span>
+        <details class="detailed-workflow-step setup-step">
+          <summary>
+            <span class="workflow-step-number">02</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 2</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 2</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Decide Whether AI Is Appropriate
               </span>
 
-              <span class="oer-step-preview">
-                Before opening any AI tool, make a deliberate decision about
-                whether AI is the right approach for this specific task.
+              <span class="workflow-step-short">
+                Decide whether AI should be part of the solution.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-2-what"
-            >
-              <h3 id="step-2-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action">
+              <h3>What should you do?</h3>
 
               <p>
-                Before opening any AI tool, make a deliberate decision about
-                whether AI is the right approach for this specific task.
+                Before opening an AI tool, make a deliberate decision about
+                whether AI is appropriate for this task.
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  Responsible AI use includes choosing not to use AI. Not
-                  every instructional problem benefits from AI involvement.
-                  Some tasks require your disciplinary expertise from the
-                  start. Others involve sensitive information that should
-                  not be shared with an AI tool. Some tasks are simply
-                  faster to complete yourself.
-                </p>
+              <p>
+                Responsible AI use includes choosing not to use AI. Some
+                tasks require your disciplinary expertise from the start.
+                Others involve information that should not be shared with
+                an AI tool.
+              </p>
 
-                <p>
-                  This step prevents AI from becoming a default rather than
-                  a deliberate choice.
-                </p>
-              </div>
-            </details>
+              <p>
+                This step protects privacy, keeps professional judgment
+                central, and prevents AI from replacing meaningful teaching
+                or learning.
+              </p>
+            </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step—four questions
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Ask four questions</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  Answer all four before continuing. If you answer no to any
-                  of them, pause and decide whether to refine your approach
-                  or complete the task without AI.
-                </p>
+              <p>
+                Answer all four before continuing. If the answer raises a
+                concern, pause and revise your approach or complete the task
+                without AI.
+              </p>
 
-                <div class="review-item">
-                  <h4>
-                    1. Is the instructional challenge clearly defined?
-                  </h4>
+              <ol class="numbered-review-list">
+                <li>
+                  <h4>Is the instructional challenge clearly defined?</h4>
 
                   <p>
                     If you cannot describe the problem in one or two
-                    sentences, go back to Step 1. A vague problem produces
-                    a vague output.
+                    sentences, return to Step 1.
                   </p>
-                </div>
+                </li>
 
-                <div class="review-item">
+                <li>
                   <h4>
-                    2. Will AI help solve this more effectively or
-                    efficiently?
+                    Will AI help solve this more effectively or efficiently?
                   </h4>
 
                   <p>
-                    AI works well for drafting, organizing, summarizing,
-                    brainstorming, and revising. It works poorly for tasks
-                    requiring deep disciplinary judgment, personalized
-                    student knowledge, or high-stakes decisions.
+                    AI may be useful for drafting, organizing, summarizing,
+                    brainstorming, or revising.
                   </p>
 
                   <p>
-                    If the task requires expertise AI cannot replicate, AI
-                    may still help with a first draft—but plan for
-                    substantial revision.
+                    It is less appropriate for high-stakes decisions,
+                    deeply contextual judgments, or tasks requiring
+                    personalized knowledge of students.
                   </p>
-                </div>
+                </li>
 
-                <div class="review-item">
+                <li>
                   <h4>
-                    3. Can I use AI without sharing sensitive, private, or
-                    restricted information?
+                    Can I use AI without sharing private or restricted
+                    information?
                   </h4>
 
                   <p>
                     Do not enter student names, grades, disability or
                     accommodation information, identifiable student work,
-                    or proprietary institutional data into a public AI tool.
+                    or confidential institutional data into a public AI
+                    tool.
                   </p>
 
                   <p>
-                    Use a de-identified or fictional version, use an
-                    institutionally approved tool with appropriate data
-                    protections, or complete the task without AI.
+                    Use de-identified or fictional information, use an
+                    institutionally approved tool, or complete the task
+                    without AI.
                   </p>
-                </div>
+                </li>
 
-                <div class="review-item">
+                <li>
                   <h4>
-                    4. Am I prepared to review and take responsibility for
-                    the final product?
+                    Am I prepared to review and take responsibility for the
+                    result?
                   </h4>
 
                   <p>
-                    AI-assisted materials that reach students are your
-                    professional responsibility. If you do not have time to
-                    review the output carefully, this is not the right
-                    moment to use AI for this task.
+                    AI-assisted materials that reach students remain your
+                    professional responsibility.
                   </p>
-                </div>
-              </div>
-            </details>
 
-            <div class="guiding-question">
-              <p class="guiding-question-label">Guiding question</p>
+                  <p>
+                    If you do not have time to review the output carefully,
+                    do not use AI for the task right now.
+                  </p>
+                </li>
+              </ol>
+            </section>
 
+            <div class="workflow-guiding-question">
+              <p class="workflow-guiding-label">Guiding question</p>
               <p>Should AI be part of the solution?</p>
             </div>
           </div>
         </details>
 
         <!-- ==================================================
-             STEP 3
+             Step 3
              ================================================== -->
 
-        <details class="oer-step setup">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">03</span>
+        <details class="detailed-workflow-step setup-step">
+          <summary>
+            <span class="workflow-step-number">03</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 3</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 3</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Choose an AI Tool
               </span>
 
-              <span class="oer-step-preview">
-                Select the AI tool that best fits the task, your privacy
-                requirements, and your institutional context.
+              <span class="workflow-step-short">
+                Match the tool to the task, privacy needs, and policy.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-3-what"
-            >
-              <h3 id="step-3-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action">
+              <h3>What should you do?</h3>
 
               <p>
-                Select the AI tool that best fits the task, your privacy
-                requirements, and your institutional context. Tool choice
-                is itself an instructional decision.
+                Select an AI tool that fits the task, your privacy
+                requirements, and your institutional context.
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  Different tools have different strengths, privacy
-                  protections, account requirements, and institutional
-                  approval statuses.
-                </p>
+              <p>
+                Different tools have different strengths, account
+                requirements, data practices, and privacy protections.
+              </p>
 
-                <p>
-                  Using the wrong tool—or using a tool without understanding
-                  its data practices—can create privacy risks, produce
-                  lower-quality outputs, or put you out of compliance with
-                  institutional policy.
-                </p>
+              <p>
+                Choosing carefully reduces privacy risks, improves the
+                quality of the draft, and helps ensure that your work
+                follows institutional policy.
+              </p>
 
-                <p>
-                  There is no single best AI tool. The right tool depends on
-                  what you are trying to accomplish.
-                </p>
+              <p>
+                There is no single best tool. The right tool depends on
+                what you need it to do.
+              </p>
+            </section>
+
+            <section class="workflow-content-section">
+              <h3>Starting points</h3>
+
+              <div class="responsive-table" tabindex="0">
+                <table>
+                  <caption>
+                    Examples of tools by task
+                  </caption>
+
+                  <thead>
+                    <tr>
+                      <th scope="col">If you want to…</th>
+                      <th scope="col">You might consider…</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Draft, brainstorm, or organize</td>
+                      <td>ChatGPT</td>
+                    </tr>
+
+                    <tr>
+                      <td>Work within the Google ecosystem</td>
+                      <td>Google Gemini</td>
+                    </tr>
+
+                    <tr>
+                      <td>Find information and inspect cited sources</td>
+                      <td>Perplexity</td>
+                    </tr>
+
+                    <tr>
+                      <td>Try an AI interface without creating an account</td>
+                      <td>Duck.ai</td>
+                    </tr>
+
+                    <tr>
+                      <td>Use guidance designed for this workflow</td>
+                      <td>Beyond the Prompt Playlab bot [link]</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </details>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step—decision guide
-              </summary>
-
-              <div class="workflow-panel">
-                <p>
-                  Use this guide to match your task to a starting point. You
-                  are not required to use the same tool as anyone else.
-                </p>
-
-                <div class="table-scroll" tabindex="0">
-                  <table class="resource-table">
-                    <caption class="resource-table-caption">
-                      AI Tool Decision Guide
-                    </caption>
-
-                    <thead>
-                      <tr>
-                        <th scope="col">If you want to…</th>
-                        <th scope="col">Consider…</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>Draft, brainstorm, or organize</td>
-                        <td>ChatGPT</td>
-                      </tr>
-
-                      <tr>
-                        <td>Stay in the Google ecosystem</td>
-                        <td>Google Gemini</td>
-                      </tr>
-
-                      <tr>
-                        <td>Find and verify information</td>
-                        <td>Perplexity AI</td>
-                      </tr>
-
-                      <tr>
-                        <td>Try AI without creating an account</td>
-                        <td>Duck.ai</td>
-                      </tr>
-
-                      <tr>
-                        <td>Use a workflow guided for this activity</td>
-                        <td>Beyond the Prompt Playlab bot [link]</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
+              <div class="workflow-note">
                 <p>
                   <strong>Always check:</strong>
-                  Does your institution have approved tools or guidance
-                  about which tools are appropriate for course design work?
-                  Institutionally licensed tools generally have stronger
-                  privacy protections than free personal accounts.
+                  Does your institution have approved tools or guidance?
+                  Institutionally licensed tools may provide stronger data
+                  protections than free personal accounts.
                 </p>
               </div>
-            </details>
+            </section>
 
-            <div class="guiding-question">
-              <p class="guiding-question-label">Guiding question</p>
-
+            <div class="workflow-guiding-question">
+              <p class="workflow-guiding-label">Guiding question</p>
               <p>Which tool fits this task, and why?</p>
             </div>
           </div>
         </details>
 
         <!-- ==================================================
-             STEP 4
+             Step 4
              ================================================== -->
 
-        <details class="oer-step setup">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">04</span>
+        <details class="detailed-workflow-step setup-step">
+          <summary>
+            <span class="workflow-step-number">04</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 4</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 4</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Provide Meaningful Context
               </span>
 
-              <span class="oer-step-preview">
-                Determine what information the AI needs to produce a useful,
-                bounded, and appropriate draft.
+              <span class="workflow-step-short">
+                Give the AI enough context and clear boundaries.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-4-what"
-            >
-              <h3 id="step-4-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action">
+              <h3>What should you do?</h3>
 
               <p>
-                Before generating anything, determine what information the
-                AI needs to produce a useful, bounded, appropriate draft.
-                Write your prompt with that context included.
+                Decide what information the AI needs to produce a useful,
+                bounded, and appropriate draft. Include that context in your
+                prompt.
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  AI generates output based on the information you provide.
-                  A generic prompt produces a generic output.
-                </p>
+              <p>
+                A generic prompt produces a generic output. Meaningful
+                context helps the draft fit your course, students, learning
+                goal, and OER materials.
+              </p>
 
-                <p>
-                  A contextualized prompt produces something much closer to
-                  what you actually need and reduces the amount of revision
-                  required afterward.
-                </p>
+              <p>
+                Clear constraints also reduce fabricated readings, dates,
+                policies, and other details that students could mistake for
+                real course information.
+              </p>
+            </section>
 
-                <p>
-                  Context also sets boundaries. Telling the AI what not to
-                  do—such as not inventing readings, due dates, or
-                  institutional policies—reduces the risk of fabricated
-                  content.
-                </p>
-              </div>
-            </details>
+            <section class="workflow-content-section">
+              <h3>What to include</h3>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step
-              </summary>
+              <ul>
+                <li>
+                  <strong>Learning outcome:</strong>
+                  What the material should help students learn or do.
+                </li>
 
-              <div class="workflow-panel">
-                <h4>What to include</h4>
+                <li>
+                  <strong>Student context:</strong>
+                  Course level, prior knowledge, likely challenges, and
+                  relevant strengths or experiences.
+                </li>
 
-                <ul>
-                  <li>
-                    <strong>Course learning outcome:</strong>
-                    The specific outcome this material is meant to support.
-                  </li>
+                <li>
+                  <strong>Course format:</strong>
+                  Online, in-person, hybrid, or HyFlex.
+                </li>
 
-                  <li>
-                    <strong>Student population:</strong>
-                    Course level, prior knowledge, typical challenges, and
-                    relevant context about who your students are.
-                  </li>
+                <li>
+                  <strong>OER material:</strong>
+                  The title, source, license, and relevant excerpt or
+                  description.
+                </li>
 
-                  <li>
-                    <strong>Course modality:</strong>
-                    In-person, online, hybrid, or HyFlex.
-                  </li>
+                <li>
+                  <strong>Desired output:</strong>
+                  The specific resource you want drafted.
+                </li>
 
-                  <li>
-                    <strong>The OER material:</strong>
-                    A description or excerpt, including the title, source,
-                    and license when relevant.
-                  </li>
+                <li>
+                  <strong>Tone and audience:</strong>
+                  Appropriate language, formality, and reading level.
+                </li>
 
-                  <li>
-                    <strong>Desired output:</strong>
-                    The specific item you want the AI to produce.
-                  </li>
+                <li>
+                  <strong>Constraints:</strong>
+                  What the AI must not invent, add, remove, or change.
+                </li>
+              </ul>
 
-                  <li>
-                    <strong>Tone and audience level:</strong>
-                    How formal or conversational the language should be and
-                    what reading level is appropriate.
-                  </li>
+              <h3>What to exclude</h3>
 
-                  <li>
-                    <strong>Explicit constraints:</strong>
-                    What the AI should not do.
-                  </li>
-                </ul>
+              <ul>
+                <li>Student names or ID numbers.</li>
+                <li>Grades or identifiable assessment results.</li>
+                <li>Disability or accommodation information.</li>
+                <li>Identifiable student work.</li>
+                <li>Confidential institutional information.</li>
+                <li>Information the task does not need.</li>
+              </ul>
 
-                <h4>What to exclude</h4>
+              <details class="simple-detail">
+                <summary>See an example prompt structure</summary>
 
-                <ul>
-                  <li>
-                    Student names, student ID numbers, or personally
-                    identifiable information.
-                  </li>
-
-                  <li>
-                    Grades, grade distributions, or assessment results.
-                  </li>
-
-                  <li>
-                    Disability or accommodation information.
-                  </li>
-
-                  <li>Identifiable student work or submissions.</li>
-
-                  <li>
-                    Proprietary or confidential institutional information.
-                  </li>
-
-                  <li>
-                    More information than the task actually requires.
-                  </li>
-                </ul>
-
-                <h4>Example prompt structure</h4>
-
-                <div class="prompt-example">
+                <div class="prompt-sample">
                   <p>
                     I am redesigning a module for an online general
                     education course that uses OER materials. Students are
                     mostly non-majors in their first or second year. The
-                    learning outcome for this module is [outcome]. The
-                    module covers [topic] using [list of OER materials].
+                    learning outcome is [outcome]. The module covers [topic]
+                    using [OER materials].
                   </p>
 
                   <p>
-                    Please draft a module overview that includes a
-                    student-friendly introduction, the learning outcome in
-                    plain language, a recommended sequence for completing
-                    the work, and a brief explanation of why each item
-                    matters.
+                    Draft a module overview that includes a student-friendly
+                    introduction, the learning outcome in plain language, a
+                    recommended sequence, and a brief explanation of why
+                    each item matters.
                   </p>
 
                   <p>
@@ -712,11 +622,11 @@
                     Flag anything you are uncertain about.
                   </p>
                 </div>
-              </div>
-            </details>
+              </details>
+            </section>
 
-            <div class="guiding-question">
-              <p class="guiding-question-label">Guiding question</p>
+            <div class="workflow-guiding-question">
+              <p class="workflow-guiding-label">Guiding question</p>
 
               <p>
                 What does the AI need to know to produce a useful first
@@ -727,166 +637,145 @@
         </details>
 
         <!-- ==================================================
-             STEP 5
+             Step 5
              ================================================== -->
 
-        <details class="oer-step setup">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">05</span>
+        <details class="detailed-workflow-step setup-step">
+          <summary>
+            <span class="workflow-step-number">05</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 5</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 5</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Generate an AI-Assisted Draft
               </span>
 
-              <span class="oer-step-preview">
-                Generate one focused, student-facing support and treat what
-                you receive as a first draft only.
+              <span class="workflow-step-short">
+                Generate one focused output and treat it as a draft.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-5-what"
-            >
-              <h3 id="step-5-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action">
+              <h3>What should you do?</h3>
 
               <p>
                 Use your selected tool and prepared context to generate one
-                student-facing support for the OER material. Treat what you
-                receive as a first draft only.
+                focused, student-facing support for the OER material.
+              </p>
+
+              <p>
+                Treat what you receive as a first draft only.
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  AI can produce a useful starting point quickly. That
-                  starting point can save time and surface organizational
-                  approaches or language you might not have considered.
-                </p>
+              <p>
+                AI can produce a starting point quickly and surface
+                organizational approaches or wording you may not have
+                considered.
+              </p>
 
-                <p>
-                  AI does not know your students, your institution, your
-                  disciplinary standards, or your instructional intent.
-                  Every output requires human review before it is usable.
-                </p>
+              <p>
+                Generating one focused item at a time makes review more
+                manageable and reduces the chance that important errors or
+                barriers will be overlooked.
+              </p>
 
-                <p>
-                  Generating one focused output rather than asking for
-                  multiple things at once makes the review process more
-                  manageable and the output more targeted.
-                </p>
-              </div>
-            </details>
+              <p>
+                AI does not know your students, discipline, institution, or
+                instructional intent. Every output still requires your
+                review.
+              </p>
+            </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step
-              </summary>
+            <section class="workflow-content-section">
+              <h3>How to do this step</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  Paste your context and prompt into the tool. Read the full
-                  output before doing anything else. Do not copy it directly
-                  into your course.
-                </p>
+              <p>
+                Paste your context and prompt into the tool. Read the full
+                response before taking any other action.
+              </p>
 
-                <p><strong>Possible outputs to request:</strong></p>
+              <p>
+                Do not copy the output directly into your course.
+              </p>
 
-                <ul>
-                  <li>Module overview or introduction.</li>
-                  <li>Reading guide or annotation scaffold.</li>
-                  <li>Discussion prompt.</li>
-                  <li>Assignment introduction or framing.</li>
-                  <li>
-                    Plain-language summary of a complex OER passage.
-                  </li>
-                  <li>Study guide or review questions.</li>
-                  <li>Glossary of key terms.</li>
-                  <li>
-                    Real-world application prompt connecting OER content to
-                    student experience.
-                  </li>
-                </ul>
+              <p><strong>Possible outputs include:</strong></p>
 
+              <ul>
+                <li>Module overview or introduction.</li>
+                <li>Reading guide or annotation scaffold.</li>
+                <li>Discussion prompt.</li>
+                <li>Assignment introduction or framing.</li>
+                <li>Plain-language summary.</li>
+                <li>Study guide or review questions.</li>
+                <li>Glossary of key terms.</li>
+                <li>
+                  Real-world application connected to student experience.
+                </li>
+              </ul>
+
+              <div class="workflow-note">
                 <p>
                   <strong>Remember:</strong>
-                  This is a starting point, not a finished product. Move to
+                  This is a starting point, not a finished product. Complete
                   Step 6 before using anything with students.
                 </p>
               </div>
-            </details>
+            </section>
 
-            <div class="guiding-question">
-              <p class="guiding-question-label">Guiding question</p>
+            <div class="workflow-guiding-question">
+              <p class="workflow-guiding-label">Guiding question</p>
 
               <p>
-                What starting point did AI provide, and what does it need
-                before it is usable?
+                What starting point did AI provide, and what does it still
+                need before it is usable?
               </p>
             </div>
           </div>
         </details>
       </div>
 
-      <p class="workflow-group-label judgment-label">
+      <p class="workflow-phase-label judgment-phase">
         Steps 6–7: Human judgment and revision
       </p>
 
-      <div class="oer-workflow">
+      <div class="workflow-step-list">
 
         <!-- ==================================================
-             STEP 6
+             Step 6
              ================================================== -->
 
-        <details class="oer-step judgment">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">06</span>
+        <details class="detailed-workflow-step judgment-step-card">
+          <summary>
+            <span class="workflow-step-number">06</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 6</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 6</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Apply Human Judgment
               </span>
 
-              <span class="oer-step-preview">
-                Review the AI-generated draft against six criteria before
-                deciding whether it can be used, revised, or rejected.
+              <span class="workflow-step-short">
+                Review the draft for accuracy, access, privacy, alignment,
+                open licensing, and learner impact.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-6-what"
-            >
-              <h3 id="step-6-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action judgment-action">
+              <h3>What should you do?</h3>
 
               <p>
-                Review the AI-generated draft against six criteria before
-                deciding whether it can be used, revised, or rejected. This
-                is the most important step in the workflow.
+                Review the draft against six criteria before deciding
+                whether it can be used, revised, or rejected.
               </p>
 
               <p>
@@ -895,79 +784,50 @@
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  AI produces fluent, confident-sounding text regardless of
-                  whether it is accurate, appropriate, accessible, or
-                  aligned with your learning outcomes.
-                </p>
+              <p>
+                AI produces polished, confident-sounding language even when
+                the content is inaccurate, inaccessible, misaligned, or
+                inappropriate.
+              </p>
 
-                <p>
-                  A polished output is not a reliable output. The review
-                  step is where your expertise, knowledge of your students,
-                  and professional responsibility enter the process.
-                </p>
+              <p>
+                This step is where your expertise, knowledge of students,
+                and professional responsibility enter the process.
+              </p>
+            </section>
 
-                <p>
-                  Skipping or rushing this step is one of the most common
-                  ways AI-assisted materials cause problems for students.
-                </p>
-              </div>
-            </details>
+            <section class="workflow-content-section">
+              <h3>Review six areas</h3>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step—six review criteria
-              </summary>
+              <!-- Accuracy -->
 
-              <div class="workflow-panel">
+              <details class="review-dropdown">
+                <summary>
+                  <span>1. Accuracy</span>
+                  <span>Can I verify the content?</span>
+                </summary>
 
-                <!-- Accuracy -->
-
-                <section class="review-criterion">
-                  <h4>1. Accuracy</h4>
-
+                <div class="review-dropdown-content">
                   <p>
-                    AI can generate plausible-sounding content that is
-                    factually wrong, outdated, or invented. This is called
-                    a hallucination.
+                    AI can generate plausible information that is wrong,
+                    outdated, oversimplified, or invented.
                   </p>
 
-                  <p><strong>Check for:</strong></p>
+                  <p><strong>Check:</strong></p>
 
                   <ul>
+                    <li>Facts, statistics, dates, and figures.</li>
+                    <li>Discipline-specific terminology.</li>
+                    <li>Citations, readings, authors, and links.</li>
+                    <li>Policies, due dates, and course requirements.</li>
                     <li>
-                      Facts, statistics, dates, or figures that were not in
-                      your original prompt.
+                      Claims that were not included in your source material.
                     </li>
-
                     <li>
-                      Disciplinary terminology used incorrectly or
-                      imprecisely.
-                    </li>
-
-                    <li>
-                      Citations, readings, authors, resources, or links that
-                      may not exist.
-                    </li>
-
-                    <li>
-                      Institutional policies, due dates, or requirements
-                      that you did not provide.
-                    </li>
-
-                    <li>
-                      Oversimplifications that distort the original OER.
-                    </li>
-
-                    <li>
-                      Claims that sound reasonable but that you cannot
-                      verify.
+                      Simplifications that change the meaning of the OER.
                     </li>
                   </ul>
 
@@ -975,176 +835,136 @@
                     <strong>Rule:</strong>
                     If you cannot verify it, do not publish it.
                   </p>
-                </section>
+                </div>
+              </details>
 
-                <!-- Accessibility -->
+              <!-- Accessibility -->
 
-                <section class="review-criterion">
-                  <h4>2. Accessibility</h4>
+              <details class="review-dropdown">
+                <summary>
+                  <span>2. Accessibility</span>
+                  <span>Can students access, navigate, and understand it?</span>
+                </summary>
 
+                <div class="review-dropdown-content">
                   <p>
-                    Accessibility means every student can access, navigate,
-                    and understand the material, including students using
-                    assistive technology, students with disabilities,
-                    multilingual learners, and students using mobile
-                    devices.
+                    Accessibility means students can access, navigate, and
+                    understand the material across disabilities, devices,
+                    and learning contexts.
                   </p>
 
-                  <details class="nested-detail">
+                  <p><strong>Check:</strong></p>
+
+                  <ul>
+                    <li>
+                      Are headings used in a logical order?
+                    </li>
+
+                    <li>
+                      Is the reading level appropriate?
+                    </li>
+
+                    <li>
+                      Do links describe their purpose?
+                    </li>
+
+                    <li>
+                      Is information structured in a logical, scannable
+                      order?
+                    </li>
+
+                    <li>
+                      Does the content avoid relying on color alone?
+                    </li>
+
+                    <li>
+                      Do videos have accurate captions?
+                    </li>
+
+                    <li>
+                      Is equivalent text available for audio when needed?
+                    </li>
+
+                    <li>
+                      Are complex terms defined in plain language?
+                    </li>
+
+                    <li>
+                      Are ordered instructions numbered?
+                    </li>
+
+                    <li>
+                      Do meaningful images have appropriate alt text?
+                    </li>
+
+                    <li>
+                      Are data tables identified with captions and proper
+                      headers?
+                    </li>
+                  </ul>
+
+                  <details class="simple-detail">
                     <summary>
                       New to accessibility? Start here.
                     </summary>
 
-                    <div class="nested-detail-content">
+                    <div>
                       <p>
-                        <strong>What is accessibility?</strong>
-                        Accessibility means designing course materials so
-                        that every student can use them, regardless of
+                        <strong>Accessibility</strong> means designing
+                        materials so people can use them regardless of
                         disability, device, language background, or learning
                         difference.
                       </p>
 
                       <p>
-                        Public colleges and universities in the United
-                        States are required to provide accessible
-                        educational materials under laws including ADA
-                        Title II and Section 504.
+                        <strong>WCAG</strong> means Web Content Accessibility
+                        Guidelines. WCAG 2.1 Level AA is the minimum standard
+                        for this project.
                       </p>
 
                       <p>
-                        <strong>What is WCAG?</strong>
-                        WCAG stands for Web Content Accessibility
-                        Guidelines. It is an international standard for
-                        digital accessibility. WCAG 2.1 Level AA is the
-                        minimum target for this project.
+                        <strong>UDL</strong> means Universal Design for
+                        Learning. UDL encourages flexible learning
+                        experiences that reduce barriers from the start.
                       </p>
-
-                      <p>
-                        <strong>What is UDL?</strong>
-                        UDL stands for Universal Design for Learning. It
-                        encourages flexible learning experiences designed
-                        to reduce barriers from the start.
-                      </p>
-
-                      <p><strong>Practical starting points:</strong></p>
-
-                      <ul>
-                        <li>
-                          Use headings to organize content and support
-                          screen-reader navigation.
-                        </li>
-
-                        <li>
-                          Write descriptive link text instead of “click
-                          here.”
-                        </li>
-
-                        <li>
-                          Check that videos have accurate captions and that
-                          audio has an equivalent transcript when needed.
-                        </li>
-
-                        <li>
-                          Do not use color as the only way to communicate
-                          meaning.
-                        </li>
-
-                        <li>
-                          Write instructions in plain language and number
-                          steps when order matters.
-                        </li>
-
-                        <li>
-                          Contact your institution’s accessibility or
-                          disability services office for local guidance.
-                        </li>
-                      </ul>
                     </div>
                   </details>
+                </div>
+              </details>
 
-                  <p><strong>Check for:</strong></p>
+              <!-- Privacy -->
 
-                  <ul>
-                    <li>
-                      <strong>Heading structure:</strong>
-                      Are headings used in a logical order without skipped
-                      levels?
-                    </li>
+              <details class="review-dropdown">
+                <summary>
+                  <span>3. Privacy</span>
+                  <span>Was information handled safely?</span>
+                </summary>
 
-                    <li>
-                      <strong>Reading level:</strong>
-                      Is the language appropriate for your students?
-                    </li>
-
-                    <li>
-                      <strong>Link text:</strong>
-                      Do links describe their purpose?
-                    </li>
-
-                    <li>
-                      <strong>Lists and structure:</strong>
-                      Is information presented in a logical and scannable
-                      order?
-                    </li>
-
-                    <li>
-                      <strong>Color and visual cues:</strong>
-                      Does the content rely on color alone?
-                    </li>
-
-                    <li>
-                      <strong>Media:</strong>
-                      Are captions or transcripts available and accurate?
-                    </li>
-
-                    <li>
-                      <strong>Plain language:</strong>
-                      Are complex terms defined?
-                    </li>
-
-                    <li>
-                      <strong>Instructions:</strong>
-                      Are ordered steps numbered?
-                    </li>
-                  </ul>
-                </section>
-
-                <!-- Privacy -->
-
-                <section class="review-criterion">
-                  <h4>3. Privacy</h4>
-
-                  <p>
-                    Review how information was handled during generation
-                    and whether the output creates new privacy concerns.
-                  </p>
-
-                  <p><strong>Check for:</strong></p>
+                <div class="review-dropdown-content">
+                  <p><strong>Check:</strong></p>
 
                   <ul>
                     <li>
-                      Did the prompt include student names, grades,
-                      accommodation details, or other protected
-                      information?
+                      Did the prompt include names, grades, accommodation
+                      information, or protected data?
                     </li>
 
                     <li>
-                      Could the same output have been produced with
-                      de-identified or fictional context?
+                      Could fictional or de-identified context have been
+                      used instead?
                     </li>
 
                     <li>
-                      Does the output refer to a specific student, even
-                      indirectly?
+                      Does the output refer to specific students?
                     </li>
 
                     <li>
-                      Was the tool institutionally approved?
+                      Was the tool approved by your institution?
                     </li>
 
                     <li>
-                      Does your institution have rules about which AI tools
-                      may be used?
+                      Does your institution have rules about AI tools or
+                      disclosure?
                     </li>
 
                     <li>
@@ -1152,25 +972,28 @@
                       material?
                     </li>
                   </ul>
-                </section>
+                </div>
+              </details>
 
-                <!-- Alignment -->
+              <!-- Alignment -->
 
-                <section class="review-criterion">
-                  <h4>4. Alignment</h4>
+              <details class="review-dropdown">
+                <summary>
+                  <span>4. Alignment</span>
+                  <span>Does everything support the learning goal?</span>
+                </summary>
 
+                <div class="review-dropdown-content">
                   <p>
                     Alignment means the learning outcome, OER materials,
-                    activities, and assessment all point in the same
-                    direction.
+                    activities, and assessment point in the same direction.
                   </p>
 
-                  <p><strong>Check for:</strong></p>
+                  <p><strong>Check:</strong></p>
 
                   <ul>
                     <li>
-                      Does the draft connect clearly to the learning
-                      outcome?
+                      Does the draft connect to the learning outcome?
                     </li>
 
                     <li>
@@ -1179,8 +1002,8 @@
                     </li>
 
                     <li>
-                      Does the activity ask students to engage with the
-                      intended learning?
+                      Does the activity ask students to practice the intended
+                      learning?
                     </li>
 
                     <li>
@@ -1188,47 +1011,67 @@
                     </li>
 
                     <li>
-                      Would completing the work prepare students for the
-                      assessment?
+                      Would students be prepared for the assessment?
                     </li>
 
                     <li>
-                      Did AI add topics that are outside the module’s scope?
+                      Did AI introduce material outside the scope of the
+                      module?
                     </li>
                   </ul>
-                </section>
+                </div>
+              </details>
 
-                <!-- OER -->
+              <!-- OER -->
 
-                <section class="review-criterion">
-                  <h4>5. OER Considerations</h4>
+              <details class="review-dropdown">
+                <summary>
+                  <span>5. OER Considerations</span>
+                  <span>Does the draft preserve open access and licensing?</span>
+                </summary>
 
-                  <p>
-                    Open Educational Resources have specific licensing,
-                    attribution, accessibility, and reuse considerations.
-                  </p>
+                <div class="review-dropdown-content">
+                  <p><strong>Check:</strong></p>
 
-                  <details class="nested-detail">
+                  <ul>
+                    <li>
+                      Is the adaptation permitted by the original license?
+                    </li>
+
+                    <li>
+                      Is the original source credited correctly?
+                    </li>
+
+                    <li>
+                      Is the resulting format accessible and reusable?
+                    </li>
+
+                    <li>
+                      Did AI change the source’s meaning or emphasis?
+                    </li>
+
+                    <li>
+                      Did the output introduce paid, restricted, or
+                      inaccessible resources?
+                    </li>
+                  </ul>
+
+                  <details class="simple-detail">
                     <summary>
                       New to OER licensing? Start here.
                     </summary>
 
-                    <div class="nested-detail-content">
+                    <div>
                       <p>
-                        <strong>What is an OER license?</strong>
-                        Open Educational Resources use licenses that define
-                        how they may be used, shared, adapted, and credited.
-                      </p>
-
-                      <p>
-                        The most common open licenses are Creative Commons
-                        licenses.
+                        Open Educational Resources use licenses that explain
+                        how the resource may be used, shared, adapted, and
+                        credited.
                       </p>
 
                       <ul>
                         <li>
                           <strong>CC BY:</strong>
-                          Use, share, and adapt with attribution.
+                          Adapt and share with attribution.
                         </li>
 
                         <li>
@@ -1248,8 +1091,7 @@
 
                         <li>
                           <strong>CC BY-NC-SA:</strong>
-                          No commercial use; adaptations use the same
-                          license.
+                          No commercial use; same license required.
                         </li>
 
                         <li>
@@ -1259,57 +1101,30 @@
                       </ul>
 
                       <p>
-                        <strong>What is attribution?</strong>
-                        Attribution means crediting the original creator.
-                        Include the title, author, source, and license when
-                        possible.
+                        Attribution normally includes the title, creator,
+                        source, and license.
                       </p>
                     </div>
                   </details>
+                </div>
+              </details>
 
-                  <p><strong>Check for:</strong></p>
+              <!-- Human Judgment -->
 
-                  <ul>
-                    <li>
-                      <strong>License compatibility:</strong>
-                      Is the adaptation allowed?
-                    </li>
+              <details class="review-dropdown">
+                <summary>
+                  <span>6. Human Judgment</span>
+                  <span>Does this reflect my students, values, and expertise?</span>
+                </summary>
 
-                    <li>
-                      <strong>Attribution:</strong>
-                      Is the original source credited correctly?
-                    </li>
-
-                    <li>
-                      <strong>Format accessibility:</strong>
-                      Is the result accessible and reusable?
-                    </li>
-
-                    <li>
-                      <strong>Accuracy to the source:</strong>
-                      Did AI change the original meaning?
-                    </li>
-
-                    <li>
-                      <strong>Open values:</strong>
-                      Did the output introduce paid or restricted
-                      resources?
-                    </li>
-                  </ul>
-                </section>
-
-                <!-- Human judgment -->
-
-                <section class="review-criterion">
-                  <h4>6. Human Judgment</h4>
-
+                <div class="review-dropdown-content">
                   <p>
-                    This criterion cannot be reduced to a checklist. Apply
-                    your expertise, knowledge of your students, and
+                    Human judgment cannot be reduced to a checklist. Apply
+                    your professional expertise, knowledge of students, and
                     instructional intent.
                   </p>
 
-                  <p><strong>Ask yourself:</strong></p>
+                  <p><strong>Ask:</strong></p>
 
                   <ul>
                     <li>
@@ -1317,44 +1132,62 @@
                     </li>
 
                     <li>
-                      Does the tone fit my students and course?
+                      Does the tone fit this course and these students?
                     </li>
 
                     <li>
-                      What would I change based on what I know about this
-                      class or this point in the term?
+                      What should change based on where students are in the
+                      course?
                     </li>
 
                     <li>
-                      Does anything feel wrong or incomplete?
+                      Does anything feel wrong, incomplete, or out of place?
                     </li>
 
                     <li>
-                      Are there cultural assumptions or examples that do
-                      not reflect my students?
+                      Are there cultural assumptions that may not reflect
+                      students’ experiences?
                     </li>
 
                     <li>
-                      Does the language frame students by what they lack
-                      rather than the strengths and experiences they bring?
+                      Does the language focus on what students lack rather
+                      than what they bring?
                     </li>
 
-                    <li>Does this reflect my values as an educator?</li>
+                    <li>
+                      Are examples varied, relevant, and respectful?
+                    </li>
 
-                    <li>What is missing that only I can provide?</li>
+                    <li>
+                      Could the wording unnecessarily shame, threaten, or
+                      discourage students?
+                    </li>
+
+                    <li>
+                      Does the resource provide clear choices or support
+                      where appropriate without lowering the learning goal?
+                    </li>
+
+                    <li>
+                      Does this reflect my values as an educator?
+                    </li>
+
+                    <li>
+                      What is missing that only I can provide?
+                    </li>
                   </ul>
 
                   <p>
-                    <strong>Remember:</strong>
                     A professional instinct that something is wrong is worth
-                    investigating, even when the output passes other checks.
+                    investigating, even when the output passes the other
+                    checks.
                   </p>
-                </section>
-              </div>
-            </details>
+                </div>
+              </details>
+            </section>
 
-            <div class="guiding-question judgment-question">
-              <p class="guiding-question-label">Guiding question</p>
+            <div class="workflow-guiding-question judgment-question">
+              <p class="workflow-guiding-label">Guiding question</p>
 
               <p>
                 Would I be comfortable using this with students in its
@@ -1365,151 +1198,139 @@
         </details>
 
         <!-- ==================================================
-             STEP 7
+             Step 7
              ================================================== -->
 
-        <details class="oer-step judgment">
-          <summary class="oer-step-summary">
-            <span class="oer-step-number">07</span>
+        <details class="detailed-workflow-step judgment-step-card">
+          <summary>
+            <span class="workflow-step-number">07</span>
 
-            <span class="oer-step-heading">
-              <span class="oer-step-kicker">Step 7</span>
+            <span class="workflow-step-summary-text">
+              <span class="workflow-step-label">Step 7</span>
 
-              <span
-                class="oer-step-title"
-                role="heading"
-                aria-level="2"
-              >
+              <span class="workflow-step-title">
                 Revise Before Students See It
               </span>
 
-              <span class="oer-step-preview">
-                Decide what to do with the draft, then act on that decision
-                before any student sees the material.
+              <span class="workflow-step-short">
+                Decide what happens to the draft and act before publishing.
               </span>
             </span>
           </summary>
 
-          <div class="oer-step-content">
-
-            <section
-              class="oer-what"
-              aria-labelledby="step-7-what"
-            >
-              <h3 id="step-7-what">What should you do?</h3>
+          <div class="detailed-workflow-content">
+            <section class="workflow-action judgment-action">
+              <h3>What should you do?</h3>
 
               <p>
-                Based on your review in Step 6, make a deliberate decision
-                about what to do with the draft. Then act on that decision
-                before any student sees the material.
+                Use your Step 6 review to decide what happens to the draft.
+                Complete the required revisions before any student sees the
+                material.
               </p>
             </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                Why this step matters
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Why is this better for learners?</h3>
 
-              <div class="workflow-panel">
-                <p>
-                  The revision step is where professional responsibility
-                  becomes concrete. AI produced a draft. You decide what
-                  happens next.
-                </p>
+              <p>
+                Revision is where professional responsibility becomes
+                concrete. AI produced a draft, but you decide what is
+                accurate, accessible, aligned, respectful, and useful.
+              </p>
 
-                <p>
-                  Publishing AI-assisted materials without review and
-                  revision transfers responsibility for accuracy,
-                  accessibility, alignment, and appropriateness to a system
-                  that cannot hold that responsibility.
-                </p>
-              </div>
-            </details>
+              <p>
+                Publishing without revision transfers responsibility to a
+                system that cannot understand your students or be
+                accountable for the result.
+              </p>
+            </section>
 
-            <details class="workflow-detail">
-              <summary class="workflow-detail-summary">
-                How to do this step—four possible outcomes
-              </summary>
+            <section class="workflow-content-section">
+              <h3>Choose one outcome</h3>
 
-              <div class="workflow-panel">
-                <section class="outcome-card">
+              <div class="workflow-outcome-grid">
+                <article>
                   <h4>Use as written</h4>
 
                   <p>
-                    The draft passed all six criteria and reflects your
-                    instructional intent. This outcome is less common than
-                    it may seem. Most drafts benefit from at least minor
-                    revision.
+                    The draft passes all six review areas and reflects your
+                    instructional intent.
                   </p>
-                </section>
 
-                <section class="outcome-card">
+                  <p>
+                    This should be less common than minor revision.
+                  </p>
+                </article>
+
+                <article>
                   <h4>Use after revisions</h4>
 
                   <p>
-                    The draft is a useful foundation but needs editing for
-                    accuracy, tone, accessibility, alignment, OER
-                    attribution, or instructor voice.
+                    The draft is useful but needs changes for accuracy,
+                    accessibility, alignment, attribution, tone, or
+                    instructor voice.
                   </p>
 
                   <p>
-                    This is the most common outcome. Make the changes, then
-                    review again before publishing.
+                    Make the changes and review it again.
                   </p>
-                </section>
+                </article>
 
-                <section class="outcome-card">
+                <article>
                   <h4>Start over with a better prompt</h4>
 
                   <p>
-                    The draft missed the mark significantly. Return to Step
-                    4, revise your context and prompt, and generate a new
-                    draft.
+                    The draft has the wrong tone, scope, content, or
+                    direction.
                   </p>
 
                   <p>
-                    This is not a failure. It is part of the process.
+                    Return to Step 4, improve the context and constraints,
+                    and generate another draft.
                   </p>
-                </section>
+                </article>
 
-                <section class="outcome-card">
+                <article>
                   <h4>Complete the task without AI</h4>
 
                   <p>
-                    The draft is not usable, or the review revealed that
-                    the task requires your expertise from the start.
+                    The output is not useful, or the task requires your
+                    expertise from the beginning.
                   </p>
 
                   <p>
-                    Choosing not to use AI is a legitimate part of
-                    responsible AI use.
+                    Choosing not to use AI is part of responsible AI use.
                   </p>
-                </section>
+                </article>
               </div>
-            </details>
+            </section>
 
-            <div class="final-reflection">
-              <p class="guiding-question-label">Final reflection</p>
-
-              <p>Before publishing, ask:</p>
+            <div class="workflow-reflection">
+              <p class="workflow-guiding-label">Final reflection</p>
 
               <ul>
-                <li>What did AI contribute to this material?</li>
+                <li>What did AI contribute?</li>
                 <li>What did I contribute?</li>
                 <li>
-                  Am I confident that what students receive reflects my
-                  professional judgment?
+                  Does the final material reflect my professional judgment?
                 </li>
               </ul>
             </div>
 
-            <div class="guiding-question judgment-question">
-              <p class="guiding-question-label">Guiding question</p>
-
+            <div class="workflow-guiding-question judgment-question">
+              <p class="workflow-guiding-label">Guiding question</p>
               <p>What did AI contribute? What did I contribute?</p>
             </div>
           </div>
         </details>
+      </div>
+
+      <div class="workflow-attribution">
+        <p>
+          This workflow was developed as part of Beyond the Prompt, a
+          resource for human-centered, responsible AI use in educational
+          settings. Session materials from Cal OER 2026.
+        </p>
       </div>
     </section>
   </main>
@@ -1529,26 +1350,29 @@
       </p>
 
       <p class="footer-small">
-        This workflow was developed as part of Beyond the Prompt.
-        Session materials from Cal OER 2026.
+        © 2026 Leah Wiitablake. All rights reserved while this project is
+        under development.
       </p>
     </div>
   </footer>
 
   <script>
-    const workflowSteps = document.querySelectorAll(".oer-step");
-    const expandWorkflowButton =
+    const workflowSteps =
+      document.querySelectorAll(".detailed-workflow-step");
+
+    const expandWorkflow =
       document.getElementById("expand-workflow");
-    const collapseWorkflowButton =
+
+    const collapseWorkflow =
       document.getElementById("collapse-workflow");
 
-    expandWorkflowButton.addEventListener("click", function () {
+    expandWorkflow.addEventListener("click", function () {
       workflowSteps.forEach(function (step) {
         step.open = true;
       });
     });
 
-    collapseWorkflowButton.addEventListener("click", function () {
+    collapseWorkflow.addEventListener("click", function () {
       workflowSteps.forEach(function (step) {
         step.open = false;
       });
