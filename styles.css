@@ -661,21 +661,21 @@ nav a {
 
 /* ==========================================================
    HTML Decision Tree
-   Responsive, centered decision paths for the Interactive
+   Responsive guided-decision layout for the Interactive
    Decision Tree page.
    ========================================================== */
 
 .decision-flow {
   width: 100%;
-  max-width: 920px;
-  margin: 1rem auto;
-  padding: 1.5rem;
+  max-width: 940px;
+  margin: 1.5rem auto;
+  padding: 2rem;
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 18px;
 }
 
-/* Prevent any child from forcing the page wider. */
+/* Prevent content from forcing the layout wider. */
 
 .decision-flow *,
 .decision-choice-row,
@@ -686,14 +686,28 @@ nav a {
   box-sizing: border-box;
 }
 
+/* Visually hide text while keeping it available to screen readers. */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* ==========================================================
    Nodes
    ========================================================== */
 
 .decision-node {
-  width: min(100%, 620px);
+  width: min(100%, 640px);
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 1.05rem 1.35rem;
   background: var(--white);
   color: var(--text);
   border: 2px solid var(--border);
@@ -703,18 +717,25 @@ nav a {
   overflow-wrap: break-word;
 }
 
-/* Start and questions use the oval/stadium shape. */
+/* Start and question nodes use oval/stadium shapes. */
 
 .decision-start,
 .decision-question {
   border-radius: 999px;
 }
 
+/* Questions should be the visual focus. */
+
+.decision-question {
+  padding: 1.2rem 1.5rem;
+  border-width: 3px;
+  font-size: 1.04rem;
+}
+
 /* Actions and outcomes use rectangular shapes. */
 
 .decision-action,
 .decision-stop,
-.decision-continue,
 .decision-recommendation {
   border-radius: 8px;
 }
@@ -740,23 +761,29 @@ nav a {
 
 .decision-action {
   border-color: var(--warning);
+  background: rgba(244, 162, 97, 0.08);
 }
 
 .decision-stop {
   border-color: var(--secondary);
-}
-
-.decision-continue {
-  border-color: var(--technical-soft);
-  color: var(--muted);
+  border-width: 3px;
+  background: rgba(139, 74, 111, 0.07);
 }
 
 .decision-recommendation {
   border-color: var(--support);
+  border-width: 3px;
+  background: rgba(42, 157, 143, 0.07);
 }
 
 .decision-next {
   border-color: var(--primary);
+}
+
+/* The old visible continue box is no longer used. */
+
+.decision-continue {
+  display: none;
 }
 
 /* ==========================================================
@@ -766,7 +793,7 @@ nav a {
 .decision-arrow {
   position: relative;
   width: 3px;
-  height: 2.4rem;
+  height: 3.25rem;
   margin: 0 auto;
   background: var(--muted);
 }
@@ -783,21 +810,22 @@ nav a {
 }
 
 /* ==========================================================
-   Yes / No choices
+   Final two-outcome rows
+   Used when both branches end in visible outcomes.
    ========================================================== */
 
 .decision-choice-row {
   position: relative;
-  width: min(100%, 820px);
-  margin: 1.5rem auto;
-  padding-top: 1.75rem;
+  width: min(100%, 840px);
+  margin: 2rem auto;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
-/* Horizontal line coming out of the parent question. */
+/* Horizontal split line. */
 
 .decision-choice-row::before {
   content: "";
@@ -809,7 +837,7 @@ nav a {
   background: var(--muted);
 }
 
-/* Short central stem from the parent question. */
+/* Stem between the parent question and split. */
 
 .decision-choice-row::after {
   content: "";
@@ -829,15 +857,15 @@ nav a {
   align-content: start;
 }
 
-/* Vertical connection from the split line to each choice. */
+/* Connector from the split line to each branch. */
 
 .decision-choice::before {
   content: "";
   position: absolute;
-  top: -1.75rem;
+  top: -2rem;
   left: 50%;
   width: 3px;
-  height: 1.75rem;
+  height: 2rem;
   transform: translateX(-50%);
   background: var(--muted);
 }
@@ -863,7 +891,7 @@ nav a {
 .decision-branch-arrow {
   position: relative;
   width: 3px;
-  height: 1.4rem;
+  height: 1.65rem;
   margin: 0 auto;
   background: var(--muted);
 }
@@ -884,31 +912,99 @@ nav a {
 }
 
 /* ==========================================================
+   Continuing paths
+   The side branch shows an outcome. The center branch
+   continues downward without a redundant text box.
+   ========================================================== */
+
+.decision-choice-row.continuing-path {
+  width: min(100%, 900px);
+  grid-template-columns:
+    minmax(180px, 1fr)
+    minmax(260px, 1.25fr)
+    minmax(180px, 1fr);
+}
+
+/* Place the stopping/corrective outcome on the left. */
+
+.continuing-path > .decision-choice:first-child {
+  grid-column: 1;
+}
+
+/* Keep the continuing path in the visual center. */
+
+.continuing-path > .decision-choice-continue {
+  grid-column: 2;
+}
+
+/* Connect only the side branch and the center pathway. */
+
+.continuing-path::before {
+  left: 16.666%;
+  right: 50%;
+}
+
+.decision-choice-continue .decision-label {
+  margin-bottom: 0.35rem;
+}
+
+/* Visible downward pathway replacing the old Continue box. */
+
+.decision-path-marker {
+  position: relative;
+  width: 3px;
+  height: 2.5rem;
+  margin: 0 auto;
+  background: var(--muted);
+}
+
+.decision-path-marker::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--muted);
+}
+
+/* ==========================================================
    Responsive behavior
    ========================================================== */
 
 @media (max-width: 760px) {
   .decision-flow {
-    padding: 1rem;
+    padding: 1.1rem;
     border-radius: 14px;
   }
 
   .decision-node {
     width: 100%;
-    padding: 0.9rem 1rem;
+    padding: 0.95rem 1rem;
   }
 
-  /* Large oval radii make long mobile questions look awkward. */
+  /* Long questions look cleaner with moderate rounding on mobile. */
 
   .decision-start,
   .decision-question {
     border-radius: 20px;
   }
 
-  .decision-choice-row {
+  .decision-question {
+    font-size: 1rem;
+  }
+
+  .decision-choice-row,
+  .decision-choice-row.continuing-path {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
     padding-top: 0;
+  }
+
+  .continuing-path > .decision-choice:first-child,
+  .continuing-path > .decision-choice-continue {
+    grid-column: 1;
   }
 
   .decision-choice-row::before,
@@ -917,12 +1013,19 @@ nav a {
   }
 
   .decision-choice {
-    padding-top: 1.5rem;
+    padding-top: 1.6rem;
   }
 
   .decision-choice::before {
     top: 0;
-    height: 1.5rem;
+    height: 1.6rem;
   }
-}
+
+  .decision-path-marker {
+    height: 2rem;
+  }
+
+  .decision-arrow {
+    height: 2.75rem;
+  }
 }
