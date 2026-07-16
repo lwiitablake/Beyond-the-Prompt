@@ -40,7 +40,8 @@
 }
 
 /* ==========================================================
-   Seven-Step Overview
+   Clickable Seven-Step Overview
+   Each link opens and moves to its matching workflow step.
    ========================================================== */
 
 .workflow-map {
@@ -61,32 +62,220 @@
 }
 
 .workflow-map-list li {
+  min-width: 0;
+  margin: 0;
+}
+
+.workflow-map-list a {
   display: grid;
   gap: 0.15rem;
   justify-items: center;
-  margin: 0;
+  height: 100%;
   padding: 0.65rem 0.4rem;
   background: var(--white);
   border: 2px solid var(--border);
-  border-bottom: 5px solid var(--primary);
+  border-bottom-width: 5px;
   border-radius: 12px;
   color: var(--text);
   font-size: 0.84rem;
   font-weight: 700;
+  line-height: 1.25;
   text-align: center;
+  text-decoration: none;
+}
+
+.workflow-map-list a:hover {
+  background: var(--background);
+  text-decoration: underline;
+}
+
+.workflow-map-list a:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
 }
 
 .workflow-map-number {
-  color: var(--primary);
   font-size: 0.76rem;
 }
 
-.workflow-map-list li.judgment-map-step {
+.primary-map-step a {
+  border-bottom-color: var(--primary);
+}
+
+.primary-map-step .workflow-map-number {
+  color: var(--primary);
+}
+
+.support-map-step a {
   border-bottom-color: var(--support);
 }
 
-.workflow-map-list li.judgment-map-step .workflow-map-number {
-  color: var(--support-dark);
+.support-map-step .workflow-map-number {
+  color: var(--support);
+}
+
+.warning-map-step a {
+  border-bottom-color: var(--warning);
+}
+
+.warning-map-step .workflow-map-number {
+  color: var(--warning-dark, var(--text));
+}
+
+.secondary-map-step a {
+  border-bottom-color: var(--secondary);
+}
+
+.secondary-map-step .workflow-map-number {
+  color: var(--secondary);
+}
+
+.technical-map-step a {
+  border-bottom-color: var(--technical);
+}
+
+.technical-map-step .workflow-map-number {
+  color: var(--technical);
+}
+
+.practice-map-step a {
+  border-bottom-color: var(--practice);
+}
+
+.practice-map-step .workflow-map-number {
+  color: var(--practice);
+}
+
+@media (max-width: 900px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ==========================================================
+   Clickable Seven-Step Overview
+   Each link opens and moves to its matching workflow step.
+   ========================================================== */
+
+.workflow-map {
+  margin: 0 0 1.5rem;
+}
+
+.workflow-map h2 {
+  margin-bottom: 0.75rem;
+}
+
+.workflow-map-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-map-list li {
+  min-width: 0;
+  margin: 0;
+}
+
+.workflow-map-list a {
+  display: grid;
+  gap: 0.15rem;
+  justify-items: center;
+  height: 100%;
+  padding: 0.65rem 0.4rem;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-bottom-width: 5px;
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+
+.workflow-map-list a:hover {
+  background: var(--background);
+  text-decoration: underline;
+}
+
+.workflow-map-list a:focus-visible {
+  outline: 3px solid var(--warning);
+  outline-offset: 3px;
+}
+
+.workflow-map-number {
+  font-size: 0.76rem;
+}
+
+.primary-map-step a {
+  border-bottom-color: var(--primary);
+}
+
+.primary-map-step .workflow-map-number {
+  color: var(--primary);
+}
+
+.support-map-step a {
+  border-bottom-color: var(--support);
+}
+
+.support-map-step .workflow-map-number {
+  color: var(--support);
+}
+
+.warning-map-step a {
+  border-bottom-color: var(--warning);
+}
+
+.warning-map-step .workflow-map-number {
+  color: var(--warning-dark, var(--text));
+}
+
+.secondary-map-step a {
+  border-bottom-color: var(--secondary);
+}
+
+.secondary-map-step .workflow-map-number {
+  color: var(--secondary);
+}
+
+.technical-map-step a {
+  border-bottom-color: var(--technical);
+}
+
+.technical-map-step .workflow-map-number {
+  color: var(--technical);
+}
+
+.practice-map-step a {
+  border-bottom-color: var(--practice);
+}
+
+.practice-map-step .workflow-map-number {
+  color: var(--practice);
+}
+
+@media (max-width: 900px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .workflow-map-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* ==========================================================
