@@ -302,9 +302,33 @@
    Main Step Accordions
    ========================================================== */
 
-.workflow-step-list {
-  display: grid;
-  gap: 1rem;
+/* ==========================================================
+   Multicolor Workflow Steps
+   Each step uses the same color as its link in the overview.
+   ========================================================== */
+
+.detailed-workflow-step.primary-step {
+  --step-color: var(--primary);
+}
+
+.detailed-workflow-step.support-step {
+  --step-color: var(--support);
+}
+
+.detailed-workflow-step.warning-step {
+  --step-color: var(--warning);
+}
+
+.detailed-workflow-step.secondary-step {
+  --step-color: var(--secondary);
+}
+
+.detailed-workflow-step.technical-step {
+  --step-color: var(--technical);
+}
+
+.detailed-workflow-step.practice-step {
+  --step-color: var(--practice);
 }
 
 .detailed-workflow-step {
@@ -314,6 +338,14 @@
   border-left-width: 8px;
   border-radius: 18px;
   scroll-margin-top: 2rem;
+}
+
+.workflow-step-number {
+  color: var(--step-color);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.85;
 }
 
 .detailed-workflow-step.setup-step {
@@ -367,13 +399,6 @@
   outline-offset: -3px;
 }
 
-.workflow-step-number {
-  color: var(--step-color);
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1;
-  opacity: 0.85;
-}
 
 .workflow-step-summary-text {
   display: grid;
