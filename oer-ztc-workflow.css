@@ -310,9 +310,10 @@
 .detailed-workflow-step {
   overflow: hidden;
   background: var(--white);
-  border: 2px solid var(--border);
+  border: 2px solid var(--step-color);
   border-left-width: 8px;
   border-radius: 18px;
+  scroll-margin-top: 2rem;
 }
 
 .detailed-workflow-step.setup-step {
@@ -367,10 +368,11 @@
 }
 
 .workflow-step-number {
-  color: var(--border);
+  color: var(--step-color);
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 700;
   line-height: 1;
+  opacity: 0.85;
 }
 
 .workflow-step-summary-text {
