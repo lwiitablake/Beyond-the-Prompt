@@ -75,46 +75,60 @@
       </div>
 
       <!-- ===================================================
-           Workflow Overview
+           Clickable Workflow Overview
            =================================================== -->
 
       <section class="workflow-map" aria-labelledby="workflow-map-heading">
         <h2 id="workflow-map-heading">The seven steps</h2>
 
         <ol class="workflow-map-list">
-          <li>
-            <span class="workflow-map-number">1</span>
-            <span>Identify</span>
+          <li class="primary-map-step">
+            <a href="#step-1">
+              <span class="workflow-map-number">1</span>
+              <span>Identify</span>
+            </a>
           </li>
 
-          <li>
-            <span class="workflow-map-number">2</span>
-            <span>Decide</span>
+          <li class="support-map-step">
+            <a href="#step-2">
+              <span class="workflow-map-number">2</span>
+              <span>Decide</span>
+            </a>
           </li>
 
-          <li>
-            <span class="workflow-map-number">3</span>
-            <span>Choose</span>
+          <li class="warning-map-step">
+            <a href="#step-3">
+              <span class="workflow-map-number">3</span>
+              <span>Choose</span>
+            </a>
           </li>
 
-          <li>
-            <span class="workflow-map-number">4</span>
-            <span>Context</span>
+          <li class="secondary-map-step">
+            <a href="#step-4">
+              <span class="workflow-map-number">4</span>
+              <span>Context</span>
+            </a>
           </li>
 
-          <li>
-            <span class="workflow-map-number">5</span>
-            <span>Draft</span>
+          <li class="technical-map-step">
+            <a href="#step-5">
+              <span class="workflow-map-number">5</span>
+              <span>Draft</span>
+            </a>
           </li>
 
-          <li class="judgment-map-step">
-            <span class="workflow-map-number">6</span>
-            <span>Judge</span>
+          <li class="practice-map-step">
+            <a href="#step-6">
+              <span class="workflow-map-number">6</span>
+              <span>Judge</span>
+            </a>
           </li>
 
-          <li class="judgment-map-step">
-            <span class="workflow-map-number">7</span>
-            <span>Revise</span>
+          <li class="primary-map-step">
+            <a href="#step-7">
+              <span class="workflow-map-number">7</span>
+              <span>Revise</span>
+            </a>
           </li>
         </ol>
       </section>
@@ -150,7 +164,10 @@
              Step 1
              ================================================== -->
 
-        <details class="detailed-workflow-step setup-step">
+        <details
+          class="detailed-workflow-step primary-step"
+          id="step-1"
+        >
           <summary>
             <span class="workflow-step-number">01</span>
 
@@ -295,7 +312,10 @@
              Step 2
              ================================================== -->
 
-        <details class="detailed-workflow-step setup-step">
+        <details
+          class="detailed-workflow-step support-step"
+          id="step-2"
+        >
           <summary>
             <span class="workflow-step-number">02</span>
 
@@ -425,7 +445,10 @@
              Step 3
              ================================================== -->
 
-        <details class="detailed-workflow-step setup-step">
+        <details
+          class="detailed-workflow-step warning-step"
+          id="step-3"
+        >
           <summary>
             <span class="workflow-step-number">03</span>
 
@@ -536,7 +559,10 @@
              Step 4
              ================================================== -->
 
-        <details class="detailed-workflow-step setup-step">
+        <details
+          class="detailed-workflow-step secondary-step"
+          id="step-4"
+        >
           <summary>
             <span class="workflow-step-number">04</span>
 
@@ -675,7 +701,10 @@
              Step 5
              ================================================== -->
 
-        <details class="detailed-workflow-step setup-step">
+        <details
+          class="detailed-workflow-step technical-step"
+          id="step-5"
+        >
           <summary>
             <span class="workflow-step-number">05</span>
 
@@ -782,7 +811,10 @@
              Step 6
              ================================================== -->
 
-        <details class="detailed-workflow-step judgment-step-card">
+        <details
+          class="detailed-workflow-step practice-step"
+          id="step-6"
+        >
           <summary>
             <span class="workflow-step-number">06</span>
 
@@ -801,7 +833,7 @@
           </summary>
 
           <div class="detailed-workflow-content">
-            <section class="workflow-action judgment-action">
+            <section class="workflow-action">
               <h3>What should you do?</h3>
 
               <p>
@@ -1181,7 +1213,7 @@
               </details>
             </section>
 
-            <div class="workflow-guiding-question judgment-question">
+            <div class="workflow-guiding-question">
               <p class="workflow-guiding-label">Guiding question</p>
 
               <p>
@@ -1196,7 +1228,10 @@
              Step 7
              ================================================== -->
 
-        <details class="detailed-workflow-step judgment-step-card">
+        <details
+          class="detailed-workflow-step primary-step"
+          id="step-7"
+        >
           <summary>
             <span class="workflow-step-number">07</span>
 
@@ -1214,7 +1249,7 @@
           </summary>
 
           <div class="detailed-workflow-content">
-            <section class="workflow-action judgment-action">
+            <section class="workflow-action">
               <h3>What should you do?</h3>
 
               <p>
@@ -1312,7 +1347,7 @@
               </ul>
             </div>
 
-            <div class="workflow-guiding-question judgment-question">
+            <div class="workflow-guiding-question">
               <p class="workflow-guiding-label">Guiding question</p>
               <p>What did AI contribute? What did I contribute?</p>
             </div>
@@ -1372,6 +1407,54 @@
         step.open = false;
       });
     });
+
+    function openLinkedStep() {
+      const stepId = window.location.hash;
+
+      if (!stepId) {
+        return;
+      }
+
+      const linkedStep = document.querySelector(stepId);
+
+      if (
+        !linkedStep ||
+        !linkedStep.classList.contains("detailed-workflow-step")
+      ) {
+        return;
+      }
+
+      linkedStep.open = true;
+
+      window.setTimeout(function () {
+        const stepSummary =
+          linkedStep.querySelector(":scope > summary");
+
+        linkedStep.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        if (stepSummary) {
+          stepSummary.setAttribute("tabindex", "-1");
+          stepSummary.focus({
+            preventScroll: true
+          });
+        }
+      }, 50);
+    }
+
+    document
+      .querySelectorAll('.workflow-map-list a[href^="#step-"]')
+      .forEach(function (stepLink) {
+        stepLink.addEventListener("click", function () {
+          window.setTimeout(openLinkedStep, 0);
+        });
+      });
+
+    window.addEventListener("hashchange", openLinkedStep);
+
+    openLinkedStep();
   </script>
 </body>
 </html>
